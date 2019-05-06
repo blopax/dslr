@@ -1,24 +1,12 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-SUBJECT = ["Arithmancy", "Astronomy", "Herbology", "Defense Against the Dark Arts", "Divination", "Muggle Studies",
-           "Ancient Runes", "History of Magic", "Transfiguration", "Potions", "Care of Magical Creatures",
-           "Charms", "Flying"]
-
-HOUSES = ["Ravenclaw", "Slytherin", "Gryffindor", "Hufflepuff"]
-COLOR = ["red", "blue", "green", "yellow"]
-
-color_dict = {
-    "Ravenclaw": "red",
-    "Slytherin": "green",
-    "Gryffindor": "yellow",
-    "Hufflepuff": "blue"
-}
+import utils
 
 
 def pair_plot(df):
     filtered_df = df.dropna()
-    colors = filtered_df["Hogwarts House"].apply(lambda x: color_dict[x])
+    colors = filtered_df["Hogwarts House"].apply(lambda x: utils.COLOR_DICT[x])
     filtered_df["house_nb"] = filtered_df["Hogwarts House"].astype('category').cat.codes
     filtered_df["hand"] = filtered_df["Best Hand"].astype('category').cat.codes
     filtered_df["date"] = pd.to_datetime(filtered_df["Birthday"])

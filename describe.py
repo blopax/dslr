@@ -1,9 +1,13 @@
 import pandas as pd
 import numpy as np
-from describe_utils import get_count_mean, get_dispertion, get_std
 
-def get_clean_series(dataframe, serie_name):
+from describe_utils import get_count_mean, get_dispertion, get_std
+import utils
+
+
+def get_clean_series(serie_name):
     return pd.Series(data[serie_name]).dropna()
+
 
 def describe(data):
     features = []
@@ -40,7 +44,6 @@ def describe(data):
     d['threequart'] = threequart
     d['Max'] = Max
     print(d)
-
 
 
 if __name__ == "__main__":
