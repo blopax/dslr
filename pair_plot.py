@@ -1,4 +1,5 @@
 import pandas as pd
+from pandas import plotting
 import matplotlib.pyplot as plt
 
 import utils
@@ -13,7 +14,7 @@ def pair_plot(df):
     filtered_df["day"] = pd.to_datetime(filtered_df["Birthday"]).apply(lambda x: x.day)
     filtered_df["month"] = pd.to_datetime(filtered_df["Birthday"]).apply(lambda x: x.month)
     filtered_df.drop("Index", axis=1, inplace=True)
-    pd.plotting.scatter_matrix(filtered_df, color=colors)
+    plotting.scatter_matrix(filtered_df, color=colors)
     plt.show()
 
 

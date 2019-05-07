@@ -1,37 +1,57 @@
-import pandas
+import pandas as pd
+
+
+def get_centile(serie, count, quantile_nb, quantile):
+    quantile_position = int(quantile_nb / quantile * (count - 1))
+    if ((count - 1) * quantile_nb / quantile) == int((count - 1) * quantile_nb / quantile):
+        quantile_val = float(serie.iloc[quantile_position])
+    else:
+        quantile_val = ((quantile - quantile_nb) * float(serie.iloc[quantile_position])
+                        + quantile_nb * float(serie.iloc[quantile_position + 1])) / quantile
+    return quantile_val
 
 
 def get_count_mean(serie):
-    sum = 0
+    total, index = 0, 0
     for index, item in enumerate(serie):
-        sum += item
+        total += item
     count = float(index + 1)
-    mean = sum / count
+    mean = total / count
     return count, mean
 
 
 def get_std(serie, count, mean):
     deviation_sum = 0
     for item in serie:
-        deviation_sum += (item - mean) ** 2
+        deviation_sum += ((float(item) - float(mean)) ** 2)
     std = (float(deviation_sum) / count) ** 0.5
     return std
 
 
 def get_dispertion(serie, count):
     sorted_serie = serie.sort_values()
-    min = float(sorted_serie[0])
-    first_quartile = float(sorted_serie[int(count / 4)])
-    median = float(sorted_serie[int(count/2)])
-    third_quartile = float(sorted_serie[int(3 * count / 4)])
-    max = float(sorted_serie[count - 1])
-    return min, first_quartile, median, third_quartile, max
+    minimum = float(sorted_serie.iloc[0])
+    first_quartile = get_centile(sorted_serie, count, 1, 4)
+    median = get_centile(sorted_serie, count, 1, 2)
+    third_quartile = get_centile(sorted_serie, count, 3, 4)
+    maximum = float(sorted_serie.iloc[int(count - 1)])
+    return minimum, first_quartile, median, third_quartile, maximum
+
+
+def describe_serie(serie):
+    count, mean = get_count_mean(serie)
+    std = get_std(serie, count, mean)
+    minimum, first_quartile, median, third_quartile, maximum = get_dispertion(serie, count)
+    return pd.Series([count, mean, std, minimum, first_quartile, median, third_quartile, maximum])
 
 
 if __name__ == "__main__":
-    df = pandas.read_csv("dataset_train.csv")
-    S = df["Arithmancy"]
-    count, mean = get_count_mean(S)
-    std = get_std(S, count, mean)
-    print(count, mean, std)
-    print(get_dispertion(S, count))
+    df = pd.read_csv("dataset_train.csv")
+    S = df["Arithmancy"].dropna()
+    # S = pd.Series([0, 1, 2, 3 , 4 ,5 ,6 ,7])
+
+    S_count, S_mean = get_count_mean(S)
+    std_dev = get_std(S, S_count, S_mean)
+    print(S_count, S_mean, std_dev)
+    print(get_dispertion(S, S_count))
+    print(S.describe())

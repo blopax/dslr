@@ -18,7 +18,7 @@ def show_all(df):
 
 def hist(df):
     for i, house in enumerate(utils.HOUSES):
-        plt.hist(df[df['Hogwarts House'] == house]["Care of Magical Creatures"], color=utils.COLOR[i], alpha = 0.5)
+        plt.hist(df[df['Hogwarts House'] == house]["Care of Magical Creatures"], color=utils.COLOR[i], alpha=0.5)
     plt.show()
 
 
