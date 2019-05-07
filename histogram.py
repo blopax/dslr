@@ -6,13 +6,12 @@ import utils
 
 def show_all(df):
     fig = plt.figure()
-    ax_list = []
     for index, subject in enumerate(utils.SUBJECT):
         ax = fig.add_subplot(len(utils.SUBJECT) / 4 + 1, 4, index + 1)
         for i, house in enumerate(utils.HOUSES):
             x_values = df[df['Hogwarts House'] == house][subject]
             ax.hist(x_values, color=utils.COLOR[i], alpha=0.5)
-            ax_list.append(ax)
+            ax.set_title(subject)
     plt.show()
 
 
@@ -24,6 +23,6 @@ def hist(df):
 
 if __name__ == "__main__":
     train_df = pd.read_csv("dataset_train.csv")
-    hist(train_df)
-    # show_all(train_df)
+    # hist(train_df)
+    show_all(train_df)
     # print(train_df[:5])
