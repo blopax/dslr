@@ -12,3 +12,9 @@ COLOR_DICT = {
     "Gryffindor": "yellow",
     "Hufflepuff": "blue"
 }
+
+SELECTED_FEATURES = ["Ancient Runes", "Astronomy"]
+OUTPUT_COLUMN = "Hogwarts House"
+Y_COLUMN = "house_class"
+
+TRAIN_FILE = "dataset_train.csv"
