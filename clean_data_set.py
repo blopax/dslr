@@ -30,13 +30,9 @@ def fillna_house_mean(df):
     return df
 
 
-<<<<<<< HEAD
+
 def clean_df(df, sf, train=True):
     cleaned_df = df[([utils.OUTPUT_COLUMN] + sf)]
-=======
-def clean_df(df, train=True, selected_features=utils.SELECTED_FEATURES):
-    cleaned_df = df.loc[:, ([utils.OUTPUT_COLUMN] + selected_features)]
->>>>>>> 876ee8f190529e2f2cb172ab59489ed91d5e4897
     out = None
     if train is True:
         cleaned_df.dropna(inplace=True)
@@ -44,11 +40,8 @@ def clean_df(df, train=True, selected_features=utils.SELECTED_FEATURES):
         cleaned_df.reset_index(inplace=True, drop=True)
         out = cleaned_df[utils.Y_COLUMN].values.reshape(len(cleaned_df), 1)
     cleaned_df["Ones"] = 1.0
-<<<<<<< HEAD
     features = cleaned_df[["Ones"] + sf]
-=======
-    features = cleaned_df[["Ones"] + selected_features]
->>>>>>> 876ee8f190529e2f2cb172ab59489ed91d5e4897
+
     return features, out
 
 

@@ -6,8 +6,7 @@ import binary_classifier
 import utils
 import clean_data_set
 
-
-def train(df, sf, alpha=0.1, epsilon=0.0001, fill_mean=False):
+def train(df, sf, alpha=0.1, epsilon=0.0001, reg_param=100, fill_mean=False):
     if fill_mean:
         df = clean_data_set.fillna_house_mean(df)
     #print(df[utils.SELECTED_FEATURES].describe())
@@ -40,51 +39,28 @@ def predict(x, theta_dico):
 
 if __name__ == "__main__":
     train_df = pd.read_csv(utils.TRAIN_FILE)
-
-    #print(train_df[utils.SELECTED_SUBJECT].describe())
-    # test_df = pd.read_csv("dataset_test.csv", delimiter=',')
-    # for each in utils.COMBINATORY:
-    #     theta_dico = train(train_df, each, alpha=1, epsilon=0.01, fill_mean=False)
-    #     features, out = clean_data_set.clean_df(test_df, each, train=False)
-    #     features = clean_data_set.normalize_features(features)
-    #     x = features
-    #     prediction = features.apply(lambda x: predict(x, theta_dico), axis=1)
-    #     truth = pd.read_csv("dataset_truth.csv")
-    #     house_acc = dict()
-    #     pb_loc = truth["Hogwarts House"] != prediction
-    #     show = pd.DataFrame()
-    #     show["truth"] = truth[pb_loc]["Hogwarts House"]
-    #     show["prediction"] = prediction[pb_loc]
-    #     #print(show)
-    #     #print(truth["Hogwarts House"][pb_loc].value_counts())
-    #     #print(prediction[pb_loc].value_counts())
-    #     # for house in utils.HOUSES:
-    #         # truth_house = truth[(truth["Hogwarts House"] == prediction) (truth["Hogwarts House"] == house)]
-    #         # house_acc[house] = len(truth_house[truth_house == True] / len(truth_house))
-    #     # print(house_acc)
-    #     print(each)
-    #     print(len(truth[truth["Hogwarts House"] == prediction]) / len(truth))
-
     # print(train_df[utils.SELECTED_SUBJECT].describe())
     test_df = pd.read_csv("dataset_test.csv", delimiter=',')
-    theta_dico = train(train_df, alpha=1, epsilon=0.01, reg_param=200, fill_mean=False)
-    features, out = clean_data_set.clean_df(test_df, selected_features=utils.SELECTED_FEATURES, train=False)
-    features = clean_data_set.normalize_features(features)
-    x = features
-    prediction = features.apply(lambda x: predict(x, theta_dico), axis=1)
-    truth = pd.read_csv("dataset_truth.csv")
-    house_acc = dict()
-    pb_loc = truth["Hogwarts House"] != prediction
-    show = pd.DataFrame()
-    show["truth"] = truth[pb_loc]["Hogwarts House"]
-    show["prediction"] = prediction[pb_loc]
-    print(show)
-    # print(truth["Hogwarts House"][pb_loc].value_counts())
-    # print(prediction[pb_loc].value_counts())
-    # for house in utils.HOUSES:
-        # truth_house = truth[(truth["Hogwarts House"] == prediction) (truth["Hogwarts House"] == house)]
-        # house_acc[house] = len(truth_house[truth_house == True] / len(truth_house))
-    # print(house_acc)
-    print(theta_dico)
-    print(len(truth[truth["Hogwarts House"] == prediction]) / len(truth))
+    for each in utils.COMBINATORY:
+        theta_dico = train(train_df, each, alpha=1, epsilon=0.01, reg_param=100, fill_mean=False)
+        features, out = clean_data_set.clean_df(test_df, each, train=False)
+        features = clean_data_set.normalize_features(features)
+        x = features
+        prediction = features.apply(lambda x: predict(x, theta_dico), axis=1)
+        truth = pd.read_csv("dataset_truth.csv")
+        house_acc = dict()
+        pb_loc = truth["Hogwarts House"] != prediction
+        show = pd.DataFrame()
+        show["truth"] = truth[pb_loc]["Hogwarts House"]
+        show["prediction"] = prediction[pb_loc]
+        #print(show)
+        # print(truth["Hogwarts House"][pb_loc].value_counts())
+        # print(prediction[pb_loc].value_counts())
+        # for house in utils.HOUSES:
+            # truth_house = truth[(truth["Hogwarts House"] == prediction) (truth["Hogwarts House"] == house)]
+            # house_acc[house] = len(truth_house[truth_house == True] / len(truth_house))
+        # print(house_acc)
+        #print(theta_dico)
+        print(each)
+        print(len(truth[truth["Hogwarts House"] == prediction]) / len(truth))
 

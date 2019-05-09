@@ -1,0 +1,728 @@
+['Arithmancy', 'Astronomy']
+0.6175
+['Arithmancy', 'Herbology']
+0.5425
+['Arithmancy', 'Defense Against the Dark Arts']
+0.6225
+['Arithmancy', 'Divination']
+0.43
+['Arithmancy', 'Muggle Studies']
+0.605
+['Arithmancy', 'Ancient Runes']
+0.6125
+['Arithmancy', 'History of Magic']
+0.48
+['Arithmancy', 'Transfiguration']
+0.49
+['Arithmancy', 'Potions']
+0.455
+['Arithmancy', 'Care of Magical Creatures']
+0.285
+['Arithmancy', 'Charms']
+0.7525
+['Arithmancy', 'Flying']
+0.5075
+['Astronomy', 'Herbology']
+0.9425
+['Astronomy', 'Defense Against the Dark Arts']
+0.625
+['Astronomy', 'Divination']
+0.7625
+['Astronomy', 'Muggle Studies']
+0.76
+['Astronomy', 'Ancient Runes']
+0.9475
+['Astronomy', 'History of Magic']
+0.79
+['Astronomy', 'Transfiguration']
+0.8
+['Astronomy', 'Potions']
+0.6325
+['Astronomy', 'Care of Magical Creatures']
+0.6225
+['Astronomy', 'Charms']
+0.8825
+['Astronomy', 'Flying']
+0.8275
+['Herbology', 'Defense Against the Dark Arts']
+0.955
+['Herbology', 'Divination']
+0.665
+['Herbology', 'Muggle Studies']
+0.7975
+['Herbology', 'Ancient Runes']
+0.95
+['Herbology', 'History of Magic']
+0.645
+['Herbology', 'Transfiguration']
+0.635
+['Herbology', 'Potions']
+0.71
+['Herbology', 'Care of Magical Creatures']
+0.53
+['Herbology', 'Charms']
+0.8175
+['Herbology', 'Flying']
+0.6525
+['Defense Against the Dark Arts', 'Divination']
+0.775
+['Defense Against the Dark Arts', 'Muggle Studies']
+0.77
+['Defense Against the Dark Arts', 'Ancient Runes']
+0.9625
+['Defense Against the Dark Arts', 'History of Magic']
+0.8025
+['Defense Against the Dark Arts', 'Transfiguration']
+0.81
+['Defense Against the Dark Arts', 'Potions']
+0.6375
+['Defense Against the Dark Arts', 'Care of Magical Creatures']
+0.6275
+['Defense Against the Dark Arts', 'Charms']
+0.8925
+['Defense Against the Dark Arts', 'Flying']
+0.835
+['Divination', 'Muggle Studies']
+0.7625
+['Divination', 'Ancient Runes']
+0.77
+['Divination', 'History of Magic']
+0.635
+['Divination', 'Transfiguration']
+0.6725
+['Divination', 'Potions']
+0.5875
+['Divination', 'Care of Magical Creatures']
+0.43
+['Divination', 'Charms']
+0.9
+['Divination', 'Flying']
+0.6825
+['Muggle Studies', 'Ancient Runes']
+0.7925
+['Muggle Studies', 'History of Magic']
+0.7875
+['Muggle Studies', 'Transfiguration']
+0.795
+['Muggle Studies', 'Potions']
+0.6875
+['Muggle Studies', 'Care of Magical Creatures']
+0.61
+['Muggle Studies', 'Charms']
+0.745
+['Muggle Studies', 'Flying']
+0.8125
+['Ancient Runes', 'History of Magic']
+0.79
+['Ancient Runes', 'Transfiguration']
+0.7925
+['Ancient Runes', 'Potions']
+0.7875
+['Ancient Runes', 'Care of Magical Creatures']
+0.6175
+['Ancient Runes', 'Charms']
+0.82
+['Ancient Runes', 'Flying']
+0.82
+['History of Magic', 'Transfiguration']
+0.48
+['History of Magic', 'Potions']
+0.625
+['History of Magic', 'Care of Magical Creatures']
+0.475
+['History of Magic', 'Charms']
+0.8025
+['History of Magic', 'Flying']
+0.5025
+['Transfiguration', 'Potions']
+0.61
+['Transfiguration', 'Care of Magical Creatures']
+0.4725
+['Transfiguration', 'Charms']
+0.8125
+['Transfiguration', 'Flying']
+0.5
+['Potions', 'Care of Magical Creatures']
+0.4525
+['Potions', 'Charms']
+0.8625
+['Potions', 'Flying']
+0.665
+['Care of Magical Creatures', 'Charms']
+0.765
+['Care of Magical Creatures', 'Flying']
+0.5075
+['Charms', 'Flying']
+0.925
+['Arithmancy', 'Astronomy', 'Herbology']
+0.9175
+['Arithmancy', 'Astronomy', 'Defense Against the Dark Arts']
+0.6125
+['Arithmancy', 'Astronomy', 'Divination']
+0.745
+['Arithmancy', 'Astronomy', 'Muggle Studies']
+0.74
+['Arithmancy', 'Astronomy', 'Ancient Runes']
+0.9225
+['Arithmancy', 'Astronomy', 'History of Magic']
+0.775
+['Arithmancy', 'Astronomy', 'Transfiguration']
+0.785
+['Arithmancy', 'Astronomy', 'Potions']
+0.625
+['Arithmancy', 'Astronomy', 'Care of Magical Creatures']
+0.61
+['Arithmancy', 'Astronomy', 'Charms']
+0.8525
+['Arithmancy', 'Astronomy', 'Flying']
+0.81
+['Arithmancy', 'Herbology', 'Defense Against the Dark Arts']
+0.9325
+['Arithmancy', 'Herbology', 'Divination']
+0.6775
+['Arithmancy', 'Herbology', 'Muggle Studies']
+0.7825
+['Arithmancy', 'Herbology', 'Ancient Runes']
+0.925
+['Arithmancy', 'Herbology', 'History of Magic']
+0.6375
+['Arithmancy', 'Herbology', 'Transfiguration']
+0.635
+['Arithmancy', 'Herbology', 'Potions']
+0.715
+['Arithmancy', 'Herbology', 'Care of Magical Creatures']
+0.5325
+['Arithmancy', 'Herbology', 'Charms']
+0.7975
+['Arithmancy', 'Herbology', 'Flying']
+0.67
+['Arithmancy', 'Defense Against the Dark Arts', 'Divination']
+0.76
+['Arithmancy', 'Defense Against the Dark Arts', 'Muggle Studies']
+0.7525
+['Arithmancy', 'Defense Against the Dark Arts', 'Ancient Runes']
+0.94
+['Arithmancy', 'Defense Against the Dark Arts', 'History of Magic']
+0.7875
+['Arithmancy', 'Defense Against the Dark Arts', 'Transfiguration']
+0.795
+['Arithmancy', 'Defense Against the Dark Arts', 'Potions']
+0.6225
+['Arithmancy', 'Defense Against the Dark Arts', 'Care of Magical Creatures']
+0.615
+['Arithmancy', 'Defense Against the Dark Arts', 'Charms']
+0.8625
+['Arithmancy', 'Defense Against the Dark Arts', 'Flying']
+0.8225
+['Arithmancy', 'Divination', 'Muggle Studies']
+0.745
+['Arithmancy', 'Divination', 'Ancient Runes']
+0.7525
+['Arithmancy', 'Divination', 'History of Magic']
+0.6525
+['Arithmancy', 'Divination', 'Transfiguration']
+0.6775
+['Arithmancy', 'Divination', 'Potions']
+0.575
+['Arithmancy', 'Divination', 'Care of Magical Creatures']
+0.4275
+['Arithmancy', 'Divination', 'Charms']
+0.8675
+['Arithmancy', 'Divination', 'Flying']
+0.6875
+['Arithmancy', 'Muggle Studies', 'Ancient Runes']
+0.7825
+['Arithmancy', 'Muggle Studies', 'History of Magic']
+0.7725
+['Arithmancy', 'Muggle Studies', 'Transfiguration']
+0.78
+['Arithmancy', 'Muggle Studies', 'Potions']
+0.68
+['Arithmancy', 'Muggle Studies', 'Care of Magical Creatures']
+0.5975
+['Arithmancy', 'Muggle Studies', 'Charms']
+0.7275
+['Arithmancy', 'Muggle Studies', 'Flying']
+0.7975
+['Arithmancy', 'Ancient Runes', 'History of Magic']
+0.775
+['Arithmancy', 'Ancient Runes', 'Transfiguration']
+0.775
+['Arithmancy', 'Ancient Runes', 'Potions']
+0.79
+['Arithmancy', 'Ancient Runes', 'Care of Magical Creatures']
+0.605
+['Arithmancy', 'Ancient Runes', 'Charms']
+0.8025
+['Arithmancy', 'Ancient Runes', 'Flying']
+0.815
+['Arithmancy', 'History of Magic', 'Transfiguration']
+0.48
+['Arithmancy', 'History of Magic', 'Potions']
+0.6075
+['Arithmancy', 'History of Magic', 'Care of Magical Creatures']
+0.4875
+['Arithmancy', 'History of Magic', 'Charms']
+0.785
+['Arithmancy', 'History of Magic', 'Flying']
+0.4975
+['Arithmancy', 'Transfiguration', 'Potions']
+0.6225
+['Arithmancy', 'Transfiguration', 'Care of Magical Creatures']
+0.49
+['Arithmancy', 'Transfiguration', 'Charms']
+0.795
+['Arithmancy', 'Transfiguration', 'Flying']
+0.5075
+['Arithmancy', 'Potions', 'Care of Magical Creatures']
+0.465
+['Arithmancy', 'Potions', 'Charms']
+0.8475
+['Arithmancy', 'Potions', 'Flying']
+0.6775
+['Arithmancy', 'Care of Magical Creatures', 'Charms']
+0.75
+['Arithmancy', 'Care of Magical Creatures', 'Flying']
+0.51
+['Arithmancy', 'Charms', 'Flying']
+0.925
+['Astronomy', 'Herbology', 'Defense Against the Dark Arts']
+0.93
+['Astronomy', 'Herbology', 'Divination']
+0.9325
+['Astronomy', 'Herbology', 'Muggle Studies']
+0.9275
+['Astronomy', 'Herbology', 'Ancient Runes']
+0.9325
+['Astronomy', 'Herbology', 'History of Magic']
+0.9225
+['Astronomy', 'Herbology', 'Transfiguration']
+0.925
+['Astronomy', 'Herbology', 'Potions']
+0.9175
+['Astronomy', 'Herbology', 'Care of Magical Creatures']
+0.925
+['Astronomy', 'Herbology', 'Charms']
+0.945
+['Astronomy', 'Herbology', 'Flying']
+0.9425
+['Astronomy', 'Defense Against the Dark Arts', 'Divination']
+0.755
+['Astronomy', 'Defense Against the Dark Arts', 'Muggle Studies']
+0.7525
+['Astronomy', 'Defense Against the Dark Arts', 'Ancient Runes']
+0.935
+['Astronomy', 'Defense Against the Dark Arts', 'History of Magic']
+0.785
+['Astronomy', 'Defense Against the Dark Arts', 'Transfiguration']
+0.7925
+['Astronomy', 'Defense Against the Dark Arts', 'Potions']
+0.6075
+['Astronomy', 'Defense Against the Dark Arts', 'Care of Magical Creatures']
+0.6175
+['Astronomy', 'Defense Against the Dark Arts', 'Charms']
+0.885
+['Astronomy', 'Defense Against the Dark Arts', 'Flying']
+0.815
+['Astronomy', 'Divination', 'Muggle Studies']
+0.7525
+['Astronomy', 'Divination', 'Ancient Runes']
+0.9425
+['Astronomy', 'Divination', 'History of Magic']
+0.9275
+['Astronomy', 'Divination', 'Transfiguration']
+0.9375
+['Astronomy', 'Divination', 'Potions']
+0.7525
+['Astronomy', 'Divination', 'Care of Magical Creatures']
+0.7475
+['Astronomy', 'Divination', 'Charms']
+0.875
+['Astronomy', 'Divination', 'Flying']
+0.95
+['Astronomy', 'Muggle Studies', 'Ancient Runes']
+0.93
+['Astronomy', 'Muggle Studies', 'History of Magic']
+0.9175
+['Astronomy', 'Muggle Studies', 'Transfiguration']
+0.9275
+['Astronomy', 'Muggle Studies', 'Potions']
+0.7475
+['Astronomy', 'Muggle Studies', 'Care of Magical Creatures']
+0.745
+['Astronomy', 'Muggle Studies', 'Charms']
+0.865
+['Astronomy', 'Muggle Studies', 'Flying']
+0.9425
+['Astronomy', 'Ancient Runes', 'History of Magic']
+0.9225
+['Astronomy', 'Ancient Runes', 'Transfiguration']
+0.9275
+['Astronomy', 'Ancient Runes', 'Potions']
+0.9325
+['Astronomy', 'Ancient Runes', 'Care of Magical Creatures']
+0.9325
+['Astronomy', 'Ancient Runes', 'Charms']
+0.9525
+['Astronomy', 'Ancient Runes', 'Flying']
+0.9475
+['Astronomy', 'History of Magic', 'Transfiguration']
+0.78
+['Astronomy', 'History of Magic', 'Potions']
+0.805
+['Astronomy', 'History of Magic', 'Care of Magical Creatures']
+0.78
+['Astronomy', 'History of Magic', 'Charms']
+0.935
+['Astronomy', 'History of Magic', 'Flying']
+0.805
+['Astronomy', 'Transfiguration', 'Potions']
+0.79
+['Astronomy', 'Transfiguration', 'Care of Magical Creatures']
+0.79
+['Astronomy', 'Transfiguration', 'Charms']
+0.945
+['Astronomy', 'Transfiguration', 'Flying']
+0.8125
+['Astronomy', 'Potions', 'Care of Magical Creatures']
+0.625
+['Astronomy', 'Potions', 'Charms']
+0.9075
+['Astronomy', 'Potions', 'Flying']
+0.8425
+['Astronomy', 'Care of Magical Creatures', 'Charms']
+0.8825
+['Astronomy', 'Care of Magical Creatures', 'Flying']
+0.82
+['Astronomy', 'Charms', 'Flying']
+0.965
+['Herbology', 'Defense Against the Dark Arts', 'Divination']
+0.9475
+['Herbology', 'Defense Against the Dark Arts', 'Muggle Studies']
+0.94
+['Herbology', 'Defense Against the Dark Arts', 'Ancient Runes']
+0.945
+['Herbology', 'Defense Against the Dark Arts', 'History of Magic']
+0.9375
+['Herbology', 'Defense Against the Dark Arts', 'Transfiguration']
+0.9375
+['Herbology', 'Defense Against the Dark Arts', 'Potions']
+0.9325
+['Herbology', 'Defense Against the Dark Arts', 'Care of Magical Creatures']
+0.9375
+['Herbology', 'Defense Against the Dark Arts', 'Charms']
+0.9575
+['Herbology', 'Defense Against the Dark Arts', 'Flying']
+0.955
+['Herbology', 'Divination', 'Muggle Studies']
+0.94
+['Herbology', 'Divination', 'Ancient Runes']
+0.9425
+['Herbology', 'Divination', 'History of Magic']
+0.64
+['Herbology', 'Divination', 'Transfiguration']
+0.66
+['Herbology', 'Divination', 'Potions']
+0.73
+['Herbology', 'Divination', 'Care of Magical Creatures']
+0.6575
+['Herbology', 'Divination', 'Charms']
+0.955
+['Herbology', 'Divination', 'Flying']
+0.6925
+['Herbology', 'Muggle Studies', 'Ancient Runes']
+0.935
+['Herbology', 'Muggle Studies', 'History of Magic']
+0.9225
+['Herbology', 'Muggle Studies', 'Transfiguration']
+0.9225
+['Herbology', 'Muggle Studies', 'Potions']
+0.9175
+['Herbology', 'Muggle Studies', 'Care of Magical Creatures']
+0.79
+['Herbology', 'Muggle Studies', 'Charms']
+0.8
+['Herbology', 'Muggle Studies', 'Flying']
+0.9475
+['Herbology', 'Ancient Runes', 'History of Magic']
+0.925
+['Herbology', 'Ancient Runes', 'Transfiguration']
+0.9225
+['Herbology', 'Ancient Runes', 'Potions']
+0.8975
+['Herbology', 'Ancient Runes', 'Care of Magical Creatures']
+0.9325
+['Herbology', 'Ancient Runes', 'Charms']
+0.9475
+['Herbology', 'Ancient Runes', 'Flying']
+0.945
+['Herbology', 'History of Magic', 'Transfiguration']
+0.6375
+['Herbology', 'History of Magic', 'Potions']
+0.71
+['Herbology', 'History of Magic', 'Care of Magical Creatures']
+0.6175
+['Herbology', 'History of Magic', 'Charms']
+0.94
+['Herbology', 'History of Magic', 'Flying']
+0.6225
+['Herbology', 'Transfiguration', 'Potions']
+0.7075
+['Herbology', 'Transfiguration', 'Care of Magical Creatures']
+0.625
+['Herbology', 'Transfiguration', 'Charms']
+0.935
+['Herbology', 'Transfiguration', 'Flying']
+0.63
+['Herbology', 'Potions', 'Care of Magical Creatures']
+0.7
+['Herbology', 'Potions', 'Charms']
+0.9225
+['Herbology', 'Potions', 'Flying']
+0.7275
+['Herbology', 'Care of Magical Creatures', 'Charms']
+0.8075
+['Herbology', 'Care of Magical Creatures', 'Flying']
+0.6425
+['Herbology', 'Charms', 'Flying']
+0.9625
+['Defense Against the Dark Arts', 'Divination', 'Muggle Studies']
+0.765
+['Defense Against the Dark Arts', 'Divination', 'Ancient Runes']
+0.96
+['Defense Against the Dark Arts', 'Divination', 'History of Magic']
+0.945
+['Defense Against the Dark Arts', 'Divination', 'Transfiguration']
+0.955
+['Defense Against the Dark Arts', 'Divination', 'Potions']
+0.7625
+['Defense Against the Dark Arts', 'Divination', 'Care of Magical Creatures']
+0.76
+['Defense Against the Dark Arts', 'Divination', 'Charms']
+0.885
+['Defense Against the Dark Arts', 'Divination', 'Flying']
+0.9675
+['Defense Against the Dark Arts', 'Muggle Studies', 'Ancient Runes']
+0.945
+['Defense Against the Dark Arts', 'Muggle Studies', 'History of Magic']
+0.935
+['Defense Against the Dark Arts', 'Muggle Studies', 'Transfiguration']
+0.9425
+['Defense Against the Dark Arts', 'Muggle Studies', 'Potions']
+0.76
+['Defense Against the Dark Arts', 'Muggle Studies', 'Care of Magical Creatures']
+0.755
+['Defense Against the Dark Arts', 'Muggle Studies', 'Charms']
+0.8725
+['Defense Against the Dark Arts', 'Muggle Studies', 'Flying']
+0.9575
+['Defense Against the Dark Arts', 'Ancient Runes', 'History of Magic']
+0.9425
+['Defense Against the Dark Arts', 'Ancient Runes', 'Transfiguration']
+0.9425
+['Defense Against the Dark Arts', 'Ancient Runes', 'Potions']
+0.95
+['Defense Against the Dark Arts', 'Ancient Runes', 'Care of Magical Creatures']
+0.9475
+['Defense Against the Dark Arts', 'Ancient Runes', 'Charms']
+0.9675
+['Defense Against the Dark Arts', 'Ancient Runes', 'Flying']
+0.9625
+['Defense Against the Dark Arts', 'History of Magic', 'Transfiguration']
+0.7925
+['Defense Against the Dark Arts', 'History of Magic', 'Potions']
+0.8125
+['Defense Against the Dark Arts', 'History of Magic', 'Care of Magical Creatures']
+0.7925
+['Defense Against the Dark Arts', 'History of Magic', 'Charms']
+0.9525
+['Defense Against the Dark Arts', 'History of Magic', 'Flying']
+0.8175
+['Defense Against the Dark Arts', 'Transfiguration', 'Potions']
+0.8
+['Defense Against the Dark Arts', 'Transfiguration', 'Care of Magical Creatures']
+0.8
+['Defense Against the Dark Arts', 'Transfiguration', 'Charms']
+0.96
+['Defense Against the Dark Arts', 'Transfiguration', 'Flying']
+0.82
+['Defense Against the Dark Arts', 'Potions', 'Care of Magical Creatures']
+0.6325
+['Defense Against the Dark Arts', 'Potions', 'Charms']
+0.9225
+['Defense Against the Dark Arts', 'Potions', 'Flying']
+0.8525
+['Defense Against the Dark Arts', 'Care of Magical Creatures', 'Charms']
+0.89
+['Defense Against the Dark Arts', 'Care of Magical Creatures', 'Flying']
+0.8275
+['Defense Against the Dark Arts', 'Charms', 'Flying']
+0.98
+['Divination', 'Muggle Studies', 'Ancient Runes']
+0.9375
+['Divination', 'Muggle Studies', 'History of Magic']
+0.94
+['Divination', 'Muggle Studies', 'Transfiguration']
+0.945
+['Divination', 'Muggle Studies', 'Potions']
+0.755
+['Divination', 'Muggle Studies', 'Care of Magical Creatures']
+0.7475
+['Divination', 'Muggle Studies', 'Charms']
+0.8675
+['Divination', 'Muggle Studies', 'Flying']
+0.955
+['Divination', 'Ancient Runes', 'History of Magic']
+0.9425
+['Divination', 'Ancient Runes', 'Transfiguration']
+0.9475
+['Divination', 'Ancient Runes', 'Potions']
+0.87
+['Divination', 'Ancient Runes', 'Care of Magical Creatures']
+0.7575
+['Divination', 'Ancient Runes', 'Charms']
+0.9675
+['Divination', 'Ancient Runes', 'Flying']
+0.96
+['Divination', 'History of Magic', 'Transfiguration']
+0.635
+['Divination', 'History of Magic', 'Potions']
+0.7275
+['Divination', 'History of Magic', 'Care of Magical Creatures']
+0.6375
+['Divination', 'History of Magic', 'Charms']
+0.95
+['Divination', 'History of Magic', 'Flying']
+0.655
+['Divination', 'Transfiguration', 'Potions']
+0.735
+['Divination', 'Transfiguration', 'Care of Magical Creatures']
+0.6475
+['Divination', 'Transfiguration', 'Charms']
+0.9625
+['Divination', 'Transfiguration', 'Flying']
+0.675
+['Divination', 'Potions', 'Care of Magical Creatures']
+0.57
+['Divination', 'Potions', 'Charms']
+0.8725
+['Divination', 'Potions', 'Flying']
+0.7425
+['Divination', 'Care of Magical Creatures', 'Charms']
+0.8925
+['Divination', 'Care of Magical Creatures', 'Flying']
+0.6675
+['Divination', 'Charms', 'Flying']
+0.9725
+['Muggle Studies', 'Ancient Runes', 'History of Magic']
+0.7875
+['Muggle Studies', 'Ancient Runes', 'Transfiguration']
+0.7925
+['Muggle Studies', 'Ancient Runes', 'Potions']
+0.8525
+['Muggle Studies', 'Ancient Runes', 'Care of Magical Creatures']
+0.785
+['Muggle Studies', 'Ancient Runes', 'Charms']
+0.81
+['Muggle Studies', 'Ancient Runes', 'Flying']
+0.8125
+['Muggle Studies', 'History of Magic', 'Transfiguration']
+0.775
+['Muggle Studies', 'History of Magic', 'Potions']
+0.8625
+['Muggle Studies', 'History of Magic', 'Care of Magical Creatures']
+0.78
+['Muggle Studies', 'History of Magic', 'Charms']
+0.7975
+['Muggle Studies', 'History of Magic', 'Flying']
+0.785
+['Muggle Studies', 'Transfiguration', 'Potions']
+0.8625
+['Muggle Studies', 'Transfiguration', 'Care of Magical Creatures']
+0.785
+['Muggle Studies', 'Transfiguration', 'Charms']
+0.8
+['Muggle Studies', 'Transfiguration', 'Flying']
+0.7975
+['Muggle Studies', 'Potions', 'Care of Magical Creatures']
+0.6775
+['Muggle Studies', 'Potions', 'Charms']
+0.875
+['Muggle Studies', 'Potions', 'Flying']
+0.8875
+['Muggle Studies', 'Care of Magical Creatures', 'Charms']
+0.7475
+['Muggle Studies', 'Care of Magical Creatures', 'Flying']
+0.8075
+['Muggle Studies', 'Charms', 'Flying']
+0.895
+['Ancient Runes', 'History of Magic', 'Transfiguration']
+0.77
+['Ancient Runes', 'History of Magic', 'Potions']
+0.8375
+['Ancient Runes', 'History of Magic', 'Care of Magical Creatures']
+0.78
+['Ancient Runes', 'History of Magic', 'Charms']
+0.795
+['Ancient Runes', 'History of Magic', 'Flying']
+0.7925
+['Ancient Runes', 'Transfiguration', 'Potions']
+0.8375
+['Ancient Runes', 'Transfiguration', 'Care of Magical Creatures']
+0.7825
+['Ancient Runes', 'Transfiguration', 'Charms']
+0.8
+['Ancient Runes', 'Transfiguration', 'Flying']
+0.7975
+['Ancient Runes', 'Potions', 'Care of Magical Creatures']
+0.775
+['Ancient Runes', 'Potions', 'Charms']
+0.8925
+['Ancient Runes', 'Potions', 'Flying']
+0.8825
+['Ancient Runes', 'Care of Magical Creatures', 'Charms']
+0.81
+['Ancient Runes', 'Care of Magical Creatures', 'Flying']
+0.8125
+['Ancient Runes', 'Charms', 'Flying']
+0.8675
+['History of Magic', 'Transfiguration', 'Potions']
+0.6175
+['History of Magic', 'Transfiguration', 'Care of Magical Creatures']
+0.4725
+['History of Magic', 'Transfiguration', 'Charms']
+0.795
+['History of Magic', 'Transfiguration', 'Flying']
+0.49
+['History of Magic', 'Potions', 'Care of Magical Creatures']
+0.59
+['History of Magic', 'Potions', 'Charms']
+0.875
+['History of Magic', 'Potions', 'Flying']
+0.6775
+['History of Magic', 'Care of Magical Creatures', 'Charms']
+0.7925
+['History of Magic', 'Care of Magical Creatures', 'Flying']
+0.5025
+['History of Magic', 'Charms', 'Flying']
+0.9
+['Transfiguration', 'Potions', 'Care of Magical Creatures']
+0.6
+['Transfiguration', 'Potions', 'Charms']
+0.8875
+['Transfiguration', 'Potions', 'Flying']
+0.6775
+['Transfiguration', 'Care of Magical Creatures', 'Charms']
+0.805
+['Transfiguration', 'Care of Magical Creatures', 'Flying']
+0.49
+['Transfiguration', 'Charms', 'Flying']
+0.92
+['Potions', 'Care of Magical Creatures', 'Charms']
+0.8275
+['Potions', 'Care of Magical Creatures', 'Flying']
+0.65
+['Potions', 'Charms', 'Flying']
+0.8925
+['Care of Magical Creatures', 'Charms', 'Flying']
+0.91
