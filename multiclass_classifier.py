@@ -10,11 +10,11 @@ import clean_data_set
 def train(df, alpha=0.1, epsilon=0.0001, reg_param=1, fill_mean=False, selected_features=utils.SELECTED_FEATURES):
     if fill_mean:
         df = clean_data_set.fillna_house_mean(df)
-    print("in Train")
-    print(df[utils.SELECTED_FEATURES].describe())
-    print(df[utils.SELECTED_FEATURES].head())
+    # print("in Train")
+    # print(df[utils.SELECTED_FEATURES].describe())
+    # print(df[utils.SELECTED_FEATURES].head())
 
-    features, output = clean_data_set.clean_df(df, selected_features)
+    features, output = clean_data_set.clean_df(df, selected_features=selected_features)
     features = clean_data_set.normalize_features(features)
     print(features.shape)
     thetas_init = pd.Series([0.0] * features.shape[1]).values.reshape(features.shape[1], 1)
@@ -35,7 +35,7 @@ def predict(x, theta_dico):
     predictions = dict()
     for index, house in enumerate(utils.HOUSES):
         predictions[house] = binary_classifier.hypothesis(x.transpose(), theta_dico[house])
-    print(predictions)
+    # print(predictions)
     return max(predictions, key=predictions.get)
 
 
@@ -43,8 +43,8 @@ if __name__ == "__main__":
     train_df = pd.read_csv(utils.TRAIN_FILE)
     # print(train_df[utils.SELECTED_SUBJECT].describe())
     test_df = pd.read_csv("dataset_test.csv", delimiter=',')
-    theta_dico = train(train_df, alpha=1, epsilon=0.01, reg_param=100, fill_mean=False)
-    features, out = clean_data_set.clean_df(test_df, train=False)
+    theta_dico = train(train_df, alpha=1, epsilon=0.01, reg_param=200, fill_mean=False)
+    features, out = clean_data_set.clean_df(test_df, selected_features=utils.SELECTED_FEATURES, train=False)
     features = clean_data_set.normalize_features(features)
     x = features
     prediction = features.apply(lambda x: predict(x, theta_dico), axis=1)

@@ -31,7 +31,7 @@ def fillna_house_mean(df):
 
 
 def clean_df(df, train=True, selected_features=utils.SELECTED_FEATURES):
-    cleaned_df = df[([utils.OUTPUT_COLUMN] + selected_features)]
+    cleaned_df = df.loc[:, ([utils.OUTPUT_COLUMN] + selected_features)]
     out = None
     if train is True:
         cleaned_df.dropna(inplace=True)

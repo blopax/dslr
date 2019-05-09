@@ -24,7 +24,6 @@ def update_thetas(x, y, thetas, alpha, reg_param=1):
     h = hypothesis(x, thetas)
     reg_vector = copy.deepcopy(thetas)
     reg_vector[0] = 0
-    print(thetas, reg_vector)
 
     thetas -= alpha / m * (np.dot(x.transpose(), h - y) + reg_param * reg_vector)
     return thetas

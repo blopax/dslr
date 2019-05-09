@@ -22,10 +22,10 @@ SELECTED_SUBJECT = ["Astronomy", "Herbology", "Divination", "Muggle Studies",
 # SELECTED_FEATURES = ["Astronomy", "Herbology", "Divination", "Muggle Studies", "Ancient Runes", "Transfiguration", "Charms", "Flying"]
 #SELECTED_FEATURES = ["Herbology", "Astronomy", "Charms", "Muggle Studies"]
 
-# SELECTED_FEATURES =["Divination", "Charms", "Flying", "Ancient Runes"]
+SELECTED_FEATURES =["Divination", "Charms", "Flying", "Ancient Runes"]
 # SELECTED_FEATURES = ["Astronomy", "Herbology", "Divination", "Muggle Studies", "Ancient Runes", "Transfiguration", "Charms", "Flying"]
 
-SELECTED_FEATURES = ["Charms", "Divination", "Flying"]  # 0.9725ac reg a 100
+# SELECTED_FEATURES = ["Charms", "Divination", "Flying"]  # 0.9725ac reg a 100
 
 OUTPUT_COLUMN = "Hogwarts House"
 Y_COLUMN = "house_class"
