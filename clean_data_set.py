@@ -39,7 +39,7 @@ def clean_df(df, train=True, selected_features=utils.SELECTED_FEATURES):
         cleaned_df.reset_index(inplace=True, drop=True)
         out = cleaned_df[utils.Y_COLUMN].values.reshape(len(cleaned_df), 1)
     cleaned_df["Ones"] = 1.0
-    features = cleaned_df[["Ones"] + utils.SELECTED_FEATURES]
+    features = cleaned_df[["Ones"] + selected_features]
     return features, out
 
 

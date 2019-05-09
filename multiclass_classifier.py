@@ -7,14 +7,14 @@ import utils
 import clean_data_set
 
 
-def train(df, alpha=0.1, epsilon=0.0001, reg_param=1, fill_mean=False):
+def train(df, alpha=0.1, epsilon=0.0001, reg_param=1, fill_mean=False, selected_features=utils.SELECTED_FEATURES):
     if fill_mean:
         df = clean_data_set.fillna_house_mean(df)
     print("in Train")
     print(df[utils.SELECTED_FEATURES].describe())
     print(df[utils.SELECTED_FEATURES].head())
 
-    features, output = clean_data_set.clean_df(df)
+    features, output = clean_data_set.clean_df(df, selected_features)
     features = clean_data_set.normalize_features(features)
     print(features.shape)
     thetas_init = pd.Series([0.0] * features.shape[1]).values.reshape(features.shape[1], 1)
