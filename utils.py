@@ -3,7 +3,7 @@ SUBJECT = ["Arithmancy", "Astronomy", "Herbology", "Defense Against the Dark Art
            "Charms", "Flying"]
 
 HOUSES = ["Ravenclaw", "Slytherin", "Gryffindor", "Hufflepuff"]
-COLOR = ["red", "blue", "green", "yellow"]
+COLOR = ["red", "green", "yellow", "blue"]
 
 
 COLOR_DICT = {
@@ -13,8 +13,21 @@ COLOR_DICT = {
     "Hufflepuff": "blue"
 }
 
-SELECTED_FEATURES = ["Ancient Runes", "Astronomy"]
+SELECTED_SUBJECT = ["Astronomy", "Herbology", "Divination", "Muggle Studies",
+           "Ancient Runes", "Transfiguration", "Charms", "Flying"]
+
+# SELECTED_FEATURES = ["Herbology", "Ancient Runes", "Astronomy", "Charms"]
+# SELECTED_FEATURES = ["Muggle Studies", "Astronomy", "Flying"]
+#SELECTED_FEATURES = ["Ancient Runes", "Astronomy", "Herbology"]
+# SELECTED_FEATURES = ["Astronomy", "Herbology", "Divination", "Muggle Studies", "Ancient Runes", "Transfiguration", "Charms", "Flying"]
+#SELECTED_FEATURES = ["Herbology", "Astronomy", "Charms", "Muggle Studies"]
+
+SELECTED_FEATURES =["Divination", "Charms", "Flying"]
+
+# SELECTED_FEATURES = ["Charms", "Divination", "Flying"]  # 0.9675
+
 OUTPUT_COLUMN = "Hogwarts House"
 Y_COLUMN = "house_class"
 
 TRAIN_FILE = "dataset_train.csv"
+TEST_FILE = "dataset_test.csv"

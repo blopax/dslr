@@ -8,15 +8,20 @@ def get_clean_series(serie_name):
     return pd.Series(data[serie_name]).dropna()
 
 
-def describe(df):
-    df_dict = {}
+def get_infos(df):
+    infos_dict = {}
     for item in utils.SUBJECT:
         serie = df[item].dropna()
         item_describe = describe_utils.describe_serie(serie)
-        df_dict[item] = item_describe
-    df = pd.DataFrame(df_dict)
-    df.index = ['Count', 'Mean', 'Std', 'Min', '25%', '50%', '75%', 'Max']
-    print(df)
+        infos_dict[item] = item_describe
+    infos_df = pd.DataFrame(infos_dict)
+    infos_df.index = ['Count', 'Mean', 'Std', 'Min', '25%', '50%', '75%', 'Max']
+    return infos_df
+
+
+def describe(df):
+    description = get_infos(df)
+    print(description)
 
 
 if __name__ == "__main__":
