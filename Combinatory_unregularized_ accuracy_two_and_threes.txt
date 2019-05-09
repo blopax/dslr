@@ -1,0 +1,168 @@
+['Astronomy', 'Herbology']
+0.9425
+['Astronomy', 'Divination']
+0.7625
+['Astronomy', 'Muggle Studies']
+0.7625
+['Astronomy', 'Ancient Runes']
+0.9475
+['Astronomy', 'Transfiguration']
+0.7975
+['Astronomy', 'Charms']
+0.945
+['Astronomy', 'Flying']
+0.8625
+['Herbology', 'Divination']
+0.665
+['Herbology', 'Muggle Studies']
+0.7975
+['Herbology', 'Ancient Runes']
+0.95
+['Herbology', 'Transfiguration']
+0.6375
+['Herbology', 'Charms']
+0.8075
+['Herbology', 'Flying']
+0.6675
+['Divination', 'Muggle Studies']
+0.765
+['Divination', 'Ancient Runes']
+0.77
+['Divination', 'Transfiguration']
+0.675
+['Divination', 'Charms']
+0.945
+['Divination', 'Flying']
+0.6675
+['Muggle Studies', 'Ancient Runes']
+0.7825
+['Muggle Studies', 'Transfiguration']
+0.795
+['Muggle Studies', 'Charms']
+0.7975
+['Muggle Studies', 'Flying']
+0.8525
+['Ancient Runes', 'Transfiguration']
+0.77
+['Ancient Runes', 'Charms']
+0.82
+['Ancient Runes', 'Flying']
+0.8925
+['Transfiguration', 'Charms']
+0.865
+['Transfiguration', 'Flying']
+0.5325
+['Charms', 'Flying']
+0.915
+['Astronomy', 'Herbology', 'Divination']
+0.93
+['Astronomy', 'Herbology', 'Muggle Studies']
+0.9275
+['Astronomy', 'Herbology', 'Ancient Runes']
+0.9325
+['Astronomy', 'Herbology', 'Transfiguration']
+0.925
+['Astronomy', 'Herbology', 'Charms']
+0.945
+['Astronomy', 'Herbology', 'Flying']
+0.94
+['Astronomy', 'Divination', 'Muggle Studies']
+0.7525
+['Astronomy', 'Divination', 'Ancient Runes']
+0.94
+['Astronomy', 'Divination', 'Transfiguration']
+0.9375
+['Astronomy', 'Divination', 'Charms']
+0.9325
+['Astronomy', 'Divination', 'Flying']
+0.95
+['Astronomy', 'Muggle Studies', 'Ancient Runes']
+0.925
+['Astronomy', 'Muggle Studies', 'Transfiguration']
+0.93
+['Astronomy', 'Muggle Studies', 'Charms']
+0.9375
+['Astronomy', 'Muggle Studies', 'Flying']
+0.94
+['Astronomy', 'Ancient Runes', 'Transfiguration']
+0.93
+['Astronomy', 'Ancient Runes', 'Charms']
+0.9525
+['Astronomy', 'Ancient Runes', 'Flying']
+0.95
+['Astronomy', 'Transfiguration', 'Charms']
+0.945
+['Astronomy', 'Transfiguration', 'Flying']
+0.8625
+['Astronomy', 'Charms', 'Flying']
+0.965
+['Herbology', 'Divination', 'Muggle Studies']
+0.94
+['Herbology', 'Divination', 'Ancient Runes']
+0.9425
+['Herbology', 'Divination', 'Transfiguration']
+0.6525
+['Herbology', 'Divination', 'Charms']
+0.955
+['Herbology', 'Divination', 'Flying']
+0.69
+['Herbology', 'Muggle Studies', 'Ancient Runes']
+0.935
+['Herbology', 'Muggle Studies', 'Transfiguration']
+0.9275
+['Herbology', 'Muggle Studies', 'Charms']
+0.8
+['Herbology', 'Muggle Studies', 'Flying']
+0.9475
+['Herbology', 'Ancient Runes', 'Transfiguration']
+0.92
+['Herbology', 'Ancient Runes', 'Charms']
+0.945
+['Herbology', 'Ancient Runes', 'Flying']
+0.945
+['Herbology', 'Transfiguration', 'Charms']
+0.9425
+['Herbology', 'Transfiguration', 'Flying']
+0.6525
+['Herbology', 'Charms', 'Flying']
+0.9625
+['Divination', 'Muggle Studies', 'Ancient Runes']
+0.9425
+['Divination', 'Muggle Studies', 'Transfiguration']
+0.945
+['Divination', 'Muggle Studies', 'Charms']
+0.9525
+['Divination', 'Muggle Studies', 'Flying']
+0.9475
+['Divination', 'Ancient Runes', 'Transfiguration']
+0.945
+['Divination', 'Ancient Runes', 'Charms']
+0.965
+['Divination', 'Ancient Runes', 'Flying']
+0.96
+['Divination', 'Transfiguration', 'Charms']
+0.96
+['Divination', 'Transfiguration', 'Flying']
+0.6675
+['Divination', 'Charms', 'Flying']
+0.9675
+['Muggle Studies', 'Ancient Runes', 'Transfiguration']
+0.7925
+['Muggle Studies', 'Ancient Runes', 'Charms']
+0.83
+['Muggle Studies', 'Ancient Runes', 'Flying']
+0.8475
+['Muggle Studies', 'Transfiguration', 'Charms']
+0.8225
+['Muggle Studies', 'Transfiguration', 'Flying']
+0.8025
+['Muggle Studies', 'Charms', 'Flying']
+0.9325
+['Ancient Runes', 'Transfiguration', 'Charms']
+0.8
+['Ancient Runes', 'Transfiguration', 'Flying']
+0.81
+['Ancient Runes', 'Charms', 'Flying']
+0.9325
+['Transfiguration', 'Charms', 'Flying']
+0.925
