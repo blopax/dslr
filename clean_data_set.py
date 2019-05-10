@@ -12,8 +12,13 @@ def fill_nan_house_mean(df):
     return df
 
 
-def clean_df(df, selected_features=utils.SELECTED_FEATURES, train=True):
-    cleaned_df = df[([utils.OUTPUT_COLUMN] + selected_features)]
+
+def clean_df(df, selected_features=utils.SELECTED_FEATURES, train=True, train_size=0.8):
+    train_size = train_size * len(df)
+    if train is True:
+        cleaned_df = df.loc[:train_size, ([utils.OUTPUT_COLUMN] + selected_features)]
+    else:
+        cleaned_df = df.loc[:, ([utils.OUTPUT_COLUMN] + selected_features)]
     out = None
     if train is True:
         cleaned_df.dropna(inplace=True)

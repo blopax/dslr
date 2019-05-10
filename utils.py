@@ -15,9 +15,9 @@ COLOR_DICT = {
 SELECTED_SUBJECT = ["Astronomy", "Herbology", "Divination", "Muggle Studies", "Ancient Runes", "Transfiguration",
                     "Charms", "Flying"]
 
-SELECTED_FEATURES = ["Charms", "Divination", "Flying"]  # 0.9725ac reg a 100
-# SELECTED_FEATURES = ["Charms", "Defense Against the Dark Arts", "Flying"]  # 0.98 ac reg a 100
-# SELECTED_FEATURES = ["Charms", "Astronomy", "Flying"]  # 0.965 ac reg a 100
+# SELECTED_FEATURES = ["Charms", "Divination", "Flying"]  # 0.9725ac reg a 100
+# SELECTED_FEATURES = ["Charms", "Defense Against the Dark Arts", "Flying"]  # 0.98 ac reg a 100 0.985 ac fill.mean()
+SELECTED_FEATURES = ["Charms", "Astronomy", "Flying"]  # 0.965 ac reg a 100   0.9875 ac fill.mean()
 
 OUTPUT_COLUMN = "Hogwarts House"
 Y_COLUMN = "house_class"
