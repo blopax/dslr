@@ -1,3 +1,24 @@
+import pandas as pd
+
+
+def get_accuracy(prediction, truth, mode='simple'):
+    errors_loc = truth["Hogwarts House"] != prediction
+    errors = pd.DataFrame()
+    errors["truth"] = truth[errors_loc]["Hogwarts House"]
+    errors["prediction"] = prediction[errors_loc]
+
+    total_accuracy = 1.0 - len(errors) / len(truth)
+
+    house_acc = dict()
+    for house in HOUSES:
+        house_acc[house] = 1 - len(errors[errors["truth"] == house]) / len(truth[truth["Hogwarts House"] == house])
+    if mode == 'all':
+        print("Zoom on wrong predictions:\n", errors)
+        print("Accuracy per house: ", house_acc)
+    # print("Total accuracy is: ", total_accuracy)
+    return total_accuracy
+
+
 SUBJECT = ["Arithmancy", "Astronomy", "Herbology", "Defense Against the Dark Arts", "Divination", "Muggle Studies",
            "Ancient Runes", "History of Magic", "Transfiguration", "Potions", "Care of Magical Creatures",
            "Charms", "Flying"]
@@ -19,11 +40,15 @@ SELECTED_SUBJECT = ["Astronomy", "Herbology", "Divination", "Muggle Studies", "A
 # SELECTED_FEATURES = ["Charms", "Defense Against the Dark Arts", "Flying"]  # 0.98 ac reg a 100 0.985 ac fill.mean()
 SELECTED_FEATURES = ["Charms", "Astronomy", "Flying"]  # 0.965 ac reg a 100   0.9875 ac fill.mean()
 
+# SELECTED_FEATURES = ['Arithmancy', 'Astronomy', 'Herbology']
+
+
 OUTPUT_COLUMN = "Hogwarts House"
 Y_COLUMN = "house_class"
 
 TRAIN_FILE = "dataset_train.csv"
 TEST_FILE = "dataset_test.csv"
+
 
 COMBINATORY = [['Arithmancy', 'Astronomy'], ['Arithmancy', 'Herbology'],
                ['Arithmancy', 'Defense Against the Dark Arts'], ['Arithmancy', 'Divination'],
