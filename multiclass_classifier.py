@@ -19,7 +19,8 @@ def train(df, selected_features=utils.SELECTED_FEATURES, alpha=0.1, epsilon=0.00
         house_output[house_output == index] = -1
         house_output[house_output >= 0] = 0
         house_output[house_output == -1] = 1
-        theta_dict[house], cost_list = copy.deepcopy(binary_classifier.gradient_descent(features, house_output, thetas_init, alpha, epsilon, reg_param))
+        theta_dict[house], cost_list = copy.deepcopy(
+            binary_classifier.gradient_descent(features, house_output, thetas_init, alpha, epsilon, reg_param))
 
     return theta_dict
 
@@ -31,42 +32,41 @@ def predict(x, theta_dico):
     return max(predictions, key=predictions.get)
 
 
+def accuracy(prediction, truth, mode='simple'):
+    errors_loc = truth["Hogwarts House"] != prediction
+    errors = pd.DataFrame()
+    errors["truth"] = truth[errors_loc]["Hogwarts House"]
+    errors["prediction"] = prediction[errors_loc]
+
+    total_accuracy = 1.0 - len(errors) / len(truth)
+
+    house_acc = dict()
+    for house in utils.HOUSES:
+        house_acc[house] = 1 - len(errors[errors["truth"] == house]) / len(truth[truth["Hogwarts House"] == house])
+    if mode == 'all':
+        print("Zoom on wrong predictions:\n", errors)
+        print("Accuracy per house: ", house_acc)
+    print("Total accuracy is: ", total_accuracy)
+
+
 if __name__ == "__main__":
     train_df = pd.read_csv(utils.TRAIN_FILE)
-    # print(train_df[utils.SELECTED_SUBJECT].describe())
     test_df = pd.read_csv("dataset_test.csv", delimiter=',')
 
-    #
-    # for each in utils.COMBINATORY:
-    #     final_theta_dict = train(train_df, selected_feat=each, alpha=1, epsilon=0.01, reg_param=100, fill_mean=False)
-    #     feat, out = clean_data_set.clean_df(test_df, selected_feat=each, train=False)
-    #     feat = clean_data_set.normalize_feat(feat)
+    # for select_feat in utils.COMBINATORY:
+    #     final_theta_dict = train(train_df, selected_features=select_feat, alpha=1, epsilon=0.01, reg_param=100,
+    #                              fill_mean=False)
+    #     feat, out = clean_data_set.clean_df(test_df, selected_features=select_feat, train=False)
+    #     feat = clean_data_set.normalize_features(feat)
     #     prediction = feat.apply(lambda x: predict(x, final_theta_dict), axis=1)
     #     truth = pd.read_csv("dataset_truth.csv")
-    #     house_acc = dict()
-    #     pb_loc = truth["Hogwarts House"] != prediction
-    #     show = pd.DataFrame()
-    #     show["truth"] = truth[pb_loc]["Hogwarts House"]
-    #     show["prediction"] = prediction[pb_loc]
-    #     print(each)
+    #     print(select_feat)
+    #     accuracy(prediction, truth, mode='all')
 
     final_theta_dict = train(train_df, alpha=1, epsilon=0.01, reg_param=100, fill_mean=False)
     feat, out = clean_data_set.clean_df(test_df, train=False)
     feat = clean_data_set.normalize_features(feat)
     prediction = feat.apply(lambda x: predict(x, final_theta_dict), axis=1)
     truth = pd.read_csv("dataset_truth.csv")
-    house_acc = dict()
-    pb_loc = truth["Hogwarts House"] != prediction
-    show = pd.DataFrame()
-    show["truth"] = truth[pb_loc]["Hogwarts House"]
-    show["prediction"] = prediction[pb_loc]
-    print(show)
-        # print(truth["Hogwarts House"][pb_loc].value_counts())
-        # print(prediction[pb_loc].value_counts())
-        # for house in utils.HOUSES:
-            # truth_house = truth[(truth["Hogwarts House"] == prediction) (truth["Hogwarts House"] == house)]
-            # house_acc[house] = len(truth_house[truth_house == True] / len(truth_house))
-        # print(house_acc)
-    print(final_theta_dict)
-    print(len(truth[truth["Hogwarts House"] == prediction]) / len(truth))
-
+    accuracy(prediction, truth, mode='all')
+    # print(final_theta_dict)
