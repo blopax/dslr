@@ -19,8 +19,7 @@ def train(df, selected_features=utils.SELECTED_FEATURES, alpha=0.1, epsilon=0.00
         house_output[house_output == index] = -1
         house_output[house_output >= 0] = 0
         house_output[house_output == -1] = 1
-        theta_dict[house], cost_list = copy.deepcopy(
-            binary_classifier.gradient_descent(features, house_output, thetas_init, alpha, epsilon, reg_param))
+        theta_dict[house], cost_list = copy.deepcopy(binary_classifier.gradient_descent(features, house_output, thetas_init, alpha, epsilon, reg_param))
 
     return theta_dict
 
@@ -41,9 +40,8 @@ if __name__ == "__main__":
     # for each in utils.COMBINATORY:
     #     final_theta_dict = train(train_df, selected_feat=each, alpha=1, epsilon=0.01, reg_param=100, fill_mean=False)
     #     feat, out = clean_data_set.clean_df(test_df, selected_feat=each, train=False)
-    #     feat = clean_data_set.normalize_features(feat)
-    #     feat = feat
-    #     prediction = feat.apply(lambda x: predict(feat, final_theta_dict), afeatis=1)
+    #     feat = clean_data_set.normalize_feat(feat)
+    #     prediction = feat.apply(lambda x: predict(x, final_theta_dict), axis=1)
     #     truth = pd.read_csv("dataset_truth.csv")
     #     house_acc = dict()
     #     pb_loc = truth["Hogwarts House"] != prediction
@@ -55,8 +53,7 @@ if __name__ == "__main__":
     final_theta_dict = train(train_df, alpha=1, epsilon=0.01, reg_param=100, fill_mean=False)
     feat, out = clean_data_set.clean_df(test_df, train=False)
     feat = clean_data_set.normalize_features(feat)
-    feat = feat
-    prediction = feat.apply(lambda x: predict(feat, final_theta_dict), afeatis=1)
+    prediction = feat.apply(lambda x: predict(x, final_theta_dict), axis=1)
     truth = pd.read_csv("dataset_truth.csv")
     house_acc = dict()
     pb_loc = truth["Hogwarts House"] != prediction
@@ -64,11 +61,12 @@ if __name__ == "__main__":
     show["truth"] = truth[pb_loc]["Hogwarts House"]
     show["prediction"] = prediction[pb_loc]
     print(show)
-    # print(truth["Hogwarts House"][pb_loc].value_counts())
-    # print(prediction[pb_loc].value_counts())
-    # for house in utils.HOUSES:
-    # truth_house = truth[(truth["Hogwarts House"] == prediction) (truth["Hogwarts House"] == house)]
-    # house_acc[house] = len(truth_house[truth_house == True] / len(truth_house))
-    # print(house_acc)
+        # print(truth["Hogwarts House"][pb_loc].value_counts())
+        # print(prediction[pb_loc].value_counts())
+        # for house in utils.HOUSES:
+            # truth_house = truth[(truth["Hogwarts House"] == prediction) (truth["Hogwarts House"] == house)]
+            # house_acc[house] = len(truth_house[truth_house == True] / len(truth_house))
+        # print(house_acc)
     print(final_theta_dict)
     print(len(truth[truth["Hogwarts House"] == prediction]) / len(truth))
+
