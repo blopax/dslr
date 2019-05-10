@@ -14,7 +14,6 @@ def hypothesis(x, thetas):
 
 def cost_function(x, y, thetas, reg_param=1):
     h = hypothesis(x, thetas)
-    mini, maxi = h.min(), h.max()
     regularization = reg_param / (2 * len(y)) * np.dot((thetas[1:]).transpose(), thetas[1:])
     return 1 / len(y) * (-np.dot(y.transpose(), np.log(h)) - np.dot((1-y).transpose(), np.log(1 - h))) + regularization
 
@@ -32,7 +31,7 @@ def update_thetas(x, y, thetas, alpha, reg_param=1):
 def gradient_descent(x, y, thetas, alpha=0.1, epsilon=0.0001, reg_param=1):
     cost_list = [cost_function(x, y, thetas)]
     while len(cost_list) == 1 or cost_list[-1] / cost_list[-2] <= 1 - epsilon:
-        thetas = update_thetas(x, y, thetas, alpha,reg_param)
+        thetas = update_thetas(x, y, thetas, alpha, reg_param)
         cost_list.append(float(cost_function(x, y, thetas)))
     return thetas, cost_list
 
@@ -43,6 +42,6 @@ if __name__ == "__main__":
     features = clean_data_set.normalize_features(features)
     thetas_init = pd.Series([0.0] * features.shape[1]).values.reshape(features.shape[1], 1)
     output[output != 1] = 0
-    final_thetas, cost_list = gradient_descent(features, output, thetas_init)
-    plt.plot([i for i in range(len(cost_list))], list(cost_list))
+    final_thetas, final_cost_list = gradient_descent(features, output, thetas_init)
+    plt.plot([i for i in range(len(final_cost_list))], list(final_cost_list))
     plt.show()
