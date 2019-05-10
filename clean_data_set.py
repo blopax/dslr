@@ -4,16 +4,19 @@ import utils
 import describe
 
 
-def fill_nan_house_mean(df):
-    for feature in utils.SELECTED_FEATURES:
-        mean = (df[feature]).median()
-        nan_filter = (df[feature]).isnull()
-        df.loc[nan_filter, feature] = mean
-    return df
+def normalize_features(features):
+    for feature_name in list(set(features.columns) - {"Ones"}):
+        data = pd.read_csv("dataset_train.csv")
+        infos = describe.get_infos(data)
+        mean = infos.loc["Mean", feature_name]
+        std = infos.loc["Std", feature_name]
+        if std != 0:
+            features[feature_name] -= mean
+            features[feature_name] /= std
+    return features
 
 
-
-def clean_df(df, selected_features=utils.SELECTED_FEATURES, train=True, train_size=0.8):
+def get_features(df, selected_features=utils.SELECTED_FEATURES, train=True, train_size=0.8):
     train_size = train_size * len(df)
     if train is True:
         cleaned_df = df.loc[:train_size, ([utils.OUTPUT_COLUMN] + selected_features)]
@@ -30,13 +33,15 @@ def clean_df(df, selected_features=utils.SELECTED_FEATURES, train=True, train_si
     return features, out
 
 
-def normalize_features(features):
-    for feature_name in list(set(features.columns) - {"Ones"}):
-        data = pd.read_csv("dataset_train.csv")
-        infos = describe.get_infos(data)
-        mean = infos.loc["Mean", feature_name]
-        std = infos.loc["Std", feature_name]
-        if std != 0:
-            features[feature_name] -= mean
-            features[feature_name] /= std
-    return features
+def clean_df(df, selected_features=utils.SELECTED_FEATURES, train=True, train_size=0.8):
+    if not train:
+        test_df = df[utils.SUBJECT]
+        test = normalize_features(test_df)
+        test = test.apply(lambda x: x.fillna(x.mean()), axis=1)
+        features, _ = get_features(test, train=False, train_size=1)
+        return features, None
+    else:
+        features, output = get_features(df, selected_features=selected_features, train=train, train_size=train_size)
+        features = normalize_features(features)
+        return features, output
+
