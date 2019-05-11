@@ -24,8 +24,8 @@ def get_thetas_train(df, selected_features=utils.SELECTED_FEATURES, alpha=0.1, e
 
 
 def train(df, selected_features=utils.SELECTED_FEATURES, alpha=0.1, epsilon=0.0001, reg_param=100, train_size=0.8):
-    train_df = df.loc[:int(train_size * len(df)) - 1, :]
-    test_df = df.loc[int(train_size * len(df)):, :]
+    train_df = df.sample(frac=train_size, random_state=7)
+    test_df = df.drop(train_df.index)
 
     thetas_dict, cost_list_dict = get_thetas_train(train_df, selected_features=selected_features, alpha=alpha,
                                                    epsilon=epsilon, reg_param=reg_param)
@@ -43,7 +43,6 @@ def predict_item(x, theta_dico):
 
 
 def predict(df, theta_dict):
-    print(theta_dict)
     features, _ = clean_data_set.clean_df(df, train=False)
     prediction = features.apply(lambda x: predict_item(x, theta_dict), axis=1)
     return prediction
@@ -53,10 +52,6 @@ if __name__ == "__main__":
     train_data = pd.read_csv(utils.TRAIN_FILE)
     test_data = pd.read_csv("dataset_test.csv", delimiter=',')
 
-    # test_data = pd.read_csv(utils.TRAIN_FILE)
-    # test_data = test_data.loc[1280:, :]
-    # print(test_data.shape)
-
     # with open("comb_train", mode="a+") as fd:
     #     for select_feat in utils.COMBINATORY:
     #         print(select_feat)
@@ -64,13 +59,13 @@ if __name__ == "__main__":
     #                                                     epsilon=0.01, reg_param=100, train_size=0.75)
     #         print("Train accuracy is:{} for select feature {}".format(train_accuracy, select_feat), file=fd)
 
-    final_theta_dict, _, accuracy = train(train_data, alpha=1, epsilon=0.01, reg_param=100, train_size=0.75)
+    final_theta_dict, _, accuracy = train(train_data, alpha=1, epsilon=0.01, reg_param=100, train_size=0.7)
 
     print("Train accuracy is: ", accuracy)
 
     truth = pd.read_csv("dataset_truth.csv")
     prediction = predict(test_data, final_theta_dict)
-    #
-    accuracy = utils.get_accuracy(prediction, truth, mode='all')
+
+    accuracy = utils.get_accuracy(prediction, truth, mode='simple')
     print("Test accuracy is: ", accuracy)
     # print(final_theta_dict)

@@ -2,9 +2,10 @@ import pandas as pd
 
 import utils
 import describe
-
+import warnings
 
 def normalize_features(features):
+    warnings.filterwarnings("ignore")
     for feature_name in list(set(features.columns) - {"Ones"}):
         data = pd.read_csv("dataset_train.csv")
         infos = describe.get_infos(data)
@@ -17,11 +18,7 @@ def normalize_features(features):
 
 
 def get_features(df, selected_features=utils.SELECTED_FEATURES, train=True, train_size=0.8):
-    train_size = train_size * len(df)
-    if train is True:
-        cleaned_df = df.loc[:train_size, ([utils.OUTPUT_COLUMN] + selected_features)]
-    else:
-        cleaned_df = df.loc[:, ([utils.OUTPUT_COLUMN] + selected_features)]
+    cleaned_df = df.loc[:, ([utils.OUTPUT_COLUMN] + selected_features)]
     out = None
     if train is True:
         cleaned_df.dropna(inplace=True)
