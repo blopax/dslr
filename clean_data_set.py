@@ -4,6 +4,7 @@ import utils
 import describe
 import warnings
 
+
 def normalize_features(features):
     warnings.filterwarnings("ignore")
     for feature_name in list(set(features.columns) - {"Ones"}):
@@ -17,7 +18,7 @@ def normalize_features(features):
     return features
 
 
-def get_features(df, selected_features=utils.SELECTED_FEATURES, train=True, train_size=0.8):
+def get_features(df, selected_features=utils.SELECTED_FEATURES, train=True):
     cleaned_df = df.loc[:, ([utils.OUTPUT_COLUMN] + selected_features)]
     out = None
     if train is True:
@@ -30,15 +31,14 @@ def get_features(df, selected_features=utils.SELECTED_FEATURES, train=True, trai
     return features, out
 
 
-def clean_df(df, selected_features=utils.SELECTED_FEATURES, train=True, train_size=0.8):
+def clean_df(df, selected_features=utils.SELECTED_FEATURES, train=True):
     if not train:
         test_df = df[utils.SUBJECT]
         test = normalize_features(test_df)
         test = test.apply(lambda x: x.fillna(x.mean()), axis=1)
-        features, _ = get_features(test, train=False, train_size=1)
+        features, _ = get_features(test, train=False)
         return features, None
     else:
-        features, output = get_features(df, selected_features=selected_features, train=train, train_size=train_size)
+        features, output = get_features(df, selected_features=selected_features, train=train)
         features = normalize_features(features)
         return features, output
-

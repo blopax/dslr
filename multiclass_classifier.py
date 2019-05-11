@@ -6,10 +6,8 @@ import utils
 import clean_data_set
 
 
-def get_thetas_train(df, selected_features=utils.SELECTED_FEATURES, alpha=0.1, epsilon=0.0001, reg_param=100,
-                     train_size=1):
-    features, output = clean_data_set.clean_df(df, selected_features=selected_features, train=True,
-                                               train_size=train_size)
+def get_thetas_train(df, selected_features=utils.SELECTED_FEATURES, alpha=0.1, epsilon=0.0001, reg_param=100):
+    features, output = clean_data_set.clean_df(df, selected_features=selected_features, train=True)
     thetas_init = pd.Series([0.0] * features.shape[1]).values.reshape(features.shape[1], 1)
     theta_dict, cost_list_dict = dict(), dict()
     for index, house in enumerate(utils.HOUSES):
@@ -59,13 +57,13 @@ if __name__ == "__main__":
     #                                                     epsilon=0.01, reg_param=100, train_size=0.75)
     #         print("Train accuracy is:{} for select feature {}".format(train_accuracy, select_feat), file=fd)
 
-    final_theta_dict, _, accuracy = train(train_data, alpha=1, epsilon=0.01, reg_param=100, train_size=0.7)
+    final_theta_dict, _, train_accuracy = train(train_data, alpha=1, epsilon=0.01, reg_param=100, train_size=0.7)
 
-    print("Train accuracy is: ", accuracy)
+    print("Train accuracy is: ", train_accuracy)
 
-    truth = pd.read_csv("dataset_truth.csv")
-    prediction = predict(test_data, final_theta_dict)
+    test_truth = pd.read_csv("dataset_truth.csv")
+    test_prediction = predict(test_data, final_theta_dict)
 
-    accuracy = utils.get_accuracy(prediction, truth, mode='simple')
-    print("Test accuracy is: ", accuracy)
+    test_accuracy = utils.get_accuracy(test_prediction, test_truth, mode='simple')
+    print("Test accuracy is: ", test_accuracy)
     # print(final_theta_dict)
