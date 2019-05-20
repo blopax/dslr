@@ -46,8 +46,8 @@ SELECTED_FEATURES = ["Charms", "Astronomy", "Flying"]  # 0.965 ac reg a 100   0.
 OUTPUT_COLUMN = "Hogwarts House"
 Y_COLUMN = "house_class"
 
-TRAIN_FILE = "dataset_train.csv"
-TEST_FILE = "dataset_test.csv"
+TRAIN_FILE = "files/dataset_train.csv"
+TEST_FILE = "files/dataset_test.csv"
 
 
 COMBINATORY = [['Arithmancy', 'Astronomy'], ['Arithmancy', 'Herbology'],

@@ -48,7 +48,7 @@ def predict(df, theta_dict):
 
 if __name__ == "__main__":
     train_data = pd.read_csv(utils.TRAIN_FILE)
-    test_data = pd.read_csv("dataset_test.csv", delimiter=',')
+    test_data = pd.read_csv(utils.TEST_FILE, delimiter=',')
 
     # with open("comb_train", mode="a+") as fd:
     #     for select_feat in utils.COMBINATORY:
@@ -61,7 +61,7 @@ if __name__ == "__main__":
 
     print("Train accuracy is: ", train_accuracy)
 
-    test_truth = pd.read_csv("dataset_truth.csv")
+    test_truth = pd.read_csv("files/dataset_truth.csv")
     test_prediction = predict(test_data, final_theta_dict)
 
     test_accuracy = utils.get_accuracy(test_prediction, test_truth, mode='simple')

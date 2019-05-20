@@ -1,6 +1,6 @@
 import itertools
 
-from sources import utils
+import utils
 
 lst = utils.SUBJECT
 combs = []
