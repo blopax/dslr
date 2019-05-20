@@ -21,6 +21,6 @@ def scatter_plot(df):
 
 
 if __name__ == "__main__":
-    train_df = pd.read_csv("dataset_train.csv")
+    train_df = pd.read_csv(utils.TRAIN_FILE)
     scatter_plot_all(train_df)
     # scatter_plot(train_df)

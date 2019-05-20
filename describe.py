@@ -25,6 +25,6 @@ def describe(df):
 
 
 if __name__ == "__main__":
-    data = pd.read_csv("dataset_train.csv")
+    data = pd.read_csv(utils.TRAIN_FILE)
     describe(data)
     print(data[utils.SUBJECT].describe())

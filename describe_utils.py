@@ -1,5 +1,7 @@
 import pandas as pd
 
+import utils
+
 
 def get_quantile(serie, count, quantile_nb, quantile):
     if serie.empty or count <= 0 or quantile == 0:
@@ -57,7 +59,7 @@ def describe_serie(serie):
 
 
 if __name__ == "__main__":
-    df = pd.read_csv("dataset_train.csv")
+    df = pd.read_csv(utils.TRAIN_FILE)
     S = df["Arithmancy"].dropna()
     # S = pd.Series([])
     # S = pd.Series([1, 2, 3, 4])

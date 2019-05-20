@@ -41,6 +41,6 @@ def test_plot(df):
 
 
 if __name__ == "__main__":
-    train_df = pd.read_csv("dataset_train.csv")
+    train_df = pd.read_csv(utils.TRAIN_FILE)
     pair_plot(train_df)
     # test_plot(train_df)
