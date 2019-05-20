@@ -53,7 +53,8 @@ def get_dispertion(serie, count, show_full):
         last_centile = get_quantile(sorted_serie, count, 99, 100)
         first_decile = get_quantile(sorted_serie, count, 1, 10)
         last_decile = get_quantile(sorted_serie, count, 9, 10)
-        return minimum, first_centile, first_decile, first_quartile, median, third_quartile, last_decile, last_centile, maximum
+        return minimum, first_centile, first_decile, first_quartile, median, third_quartile, last_decile,\
+               last_centile, maximum
     else:
         return minimum, first_quartile, median, third_quartile, maximum
 
@@ -65,8 +66,12 @@ def describe_serie(serie, show_full):
         minimum, first_quartile, median, third_quartile, maximum = get_dispertion(serie, count, show_full)
         return pd.Series([count, mean, std, minimum, first_quartile, median, third_quartile, maximum])
     else:
-        minimum, first_centile, first_decile, first_quartile, median, third_quartile, last_decile, last_centile, maximum = get_dispertion(serie, count, show_full)
-        return pd.Series([count, mean, std, minimum, first_centile, first_decile, first_quartile, median, third_quartile, last_decile, last_centile, maximum])
+        minimum, first_centile, first_decile, first_quartile, median, third_quartile, last_decile, last_centile,\
+        maximum = get_dispertion(
+            serie, count, show_full)
+        return pd.Series(
+            [count, mean, std, minimum, first_centile, first_decile, first_quartile, median, third_quartile,
+             last_decile, last_centile, maximum])
 
 
 if __name__ == "__main__":

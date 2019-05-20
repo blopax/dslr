@@ -30,6 +30,7 @@ def describe(df, show_full=False):
 
 def get_args():
     parser = argparse.ArgumentParser()
+    parser.add_argument("dataset_file")
     parser.add_argument("-f", "--full", action="store_true",
                         help="Add more info to description.\n")
     parser.add_argument("-c", "--compare", action="store_true",
@@ -38,11 +39,11 @@ def get_args():
 
 
 if __name__ == "__main__":
-    data = pd.read_csv(utils.TRAIN_FILE)
-    options = get_args()
-    if options.full:
+    args = get_args()
+    data = pd.read_csv(args.dataset_file)
+    if args.full:
         describe(data, show_full=True)
     else:
         describe(data)
-    if options.compare:
+    if args.compare:
         print(data[utils.SUBJECT].describe())
