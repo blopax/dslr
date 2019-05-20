@@ -1,7 +1,6 @@
 import argparse
 import pandas as pd
 import matplotlib.pyplot as plt
-import csv
 
 import multiclass_classifier
 import utils
@@ -11,11 +10,9 @@ def theta_dict_to_csv(theta_dict):
     formatted_theta_dict = dict()
     for key, value in theta_dict.items():
         formatted_theta_dict[key] = value.reshape(4, ).tolist()
-
-    with open("weights.csv", "w") as f:
-        w = csv.DictWriter(f, formatted_theta_dict)
-        w.writeheader()
-        w.writerow(formatted_theta_dict)
+    dataframe = pd.DataFrame.from_dict(formatted_theta_dict)
+    print(dataframe)
+    dataframe.to_csv("weights.csv", index=False)
 
 
 def show_cost(cost):

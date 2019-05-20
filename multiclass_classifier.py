@@ -66,4 +66,3 @@ if __name__ == "__main__":
 
     test_accuracy = utils.get_accuracy(test_prediction, test_truth, mode='simple')
     print("Test accuracy is: ", test_accuracy)
-    # print(final_theta_dict)
