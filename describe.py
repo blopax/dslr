@@ -30,7 +30,7 @@ def describe(df, show_full=False):
 
 def get_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("dataset_file")
+    parser.add_argument("dataset_file", help="Please add a dataset file (.csv) as an argument.", type=str)
     parser.add_argument("-f", "--full", action="store_true",
                         help="Add more info to description.\n")
     parser.add_argument("-c", "--compare", action="store_true",
