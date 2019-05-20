@@ -28,7 +28,7 @@ def hist(df):
 
 
 if __name__ == "__main__":
-    train_df = pd.read_csv("dataset_train.csv")
+    train_df = pd.read_csv(utils.TRAIN_FILE)
     # hist(train_df)
     show_all(train_df)
     # print(train_df[:5])

@@ -8,7 +8,7 @@ import warnings
 def normalize_features(features):
     warnings.filterwarnings("ignore")
     for feature_name in list(set(features.columns) - {"Ones"}):
-        data = pd.read_csv("dataset_train.csv")
+        data = pd.read_csv(utils.TRAIN_FILE)
         infos = describe.get_infos(data)
         mean = infos.loc["Mean", feature_name]
         std = infos.loc["Std", feature_name]

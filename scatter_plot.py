@@ -47,6 +47,6 @@ def scatter_plot(df):
 
 
 if __name__ == "__main__":
-    train_df = pd.read_csv("dataset_train.csv")
-    scatter_plot_clustered(train_df)
+    train_df = pd.read_csv(utils.TRAIN_FILE)
+    scatter_plot_detailled(train_df)
     # scatter_plot(train_df)
