@@ -38,7 +38,7 @@ def get_std(serie, count, mean):
     return std
 
 
-def get_dispertion(serie, count):
+def get_dispertion(serie, count, show_full):
     sorted_serie = serie.sort_values()
     if not serie.empty:
         minimum = float(sorted_serie.iloc[0])
@@ -48,14 +48,25 @@ def get_dispertion(serie, count):
     first_quartile = get_quantile(sorted_serie, count, 1, 4)
     median = get_quantile(sorted_serie, count, 1, 2)
     third_quartile = get_quantile(sorted_serie, count, 3, 4)
-    return minimum, first_quartile, median, third_quartile, maximum
+    if show_full:
+        first_centile = get_quantile(sorted_serie, count, 1, 100)
+        last_centile = get_quantile(sorted_serie, count, 99, 100)
+        first_decile = get_quantile(sorted_serie, count, 1, 10)
+        last_decile = get_quantile(sorted_serie, count, 9, 10)
+        return minimum, first_centile, first_decile, first_quartile, median, third_quartile, last_decile, last_centile, maximum
+    else:
+        return minimum, first_quartile, median, third_quartile, maximum
 
 
-def describe_serie(serie):
+def describe_serie(serie, show_full):
     count, mean = get_count_mean(serie)
     std = get_std(serie, count, mean)
-    minimum, first_quartile, median, third_quartile, maximum = get_dispertion(serie, count)
-    return pd.Series([count, mean, std, minimum, first_quartile, median, third_quartile, maximum])
+    if not show_full:
+        minimum, first_quartile, median, third_quartile, maximum = get_dispertion(serie, count, show_full)
+        return pd.Series([count, mean, std, minimum, first_quartile, median, third_quartile, maximum])
+    else:
+        minimum, first_centile, first_decile, first_quartile, median, third_quartile, last_decile, last_centile, maximum = get_dispertion(serie, count, show_full)
+        return pd.Series([count, mean, std, minimum, first_centile, first_decile, first_quartile, median, third_quartile, last_decile, last_centile, maximum])
 
 
 if __name__ == "__main__":
@@ -63,5 +74,5 @@ if __name__ == "__main__":
     S = df["Arithmancy"].dropna()
     # S = pd.Series([])
     # S = pd.Series([1, 2, 3, 4])
-    print(describe_serie(S))
+    print(describe_serie(S, False))
     print(S.describe())
