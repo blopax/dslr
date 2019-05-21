@@ -18,13 +18,14 @@ def cost_function(x, y, thetas, reg_param=1):
     return 1 / len(y) * (-np.dot(y.transpose(), np.log(h)) - np.dot((1-y).transpose(), np.log(1 - h))) + regularization
 
 
-def update_thetas(x, y, thetas, alpha, reg_param=1):
-    m = len(y)
+def update_thetas(x, y, thetas, alpha, reg_param=1, batch_size=None):
+    if not batch_size:
+        batch_size = len(y)
     h = hypothesis(x, thetas)
     reg_vector = copy.deepcopy(thetas)
     reg_vector[0] = 0
 
-    thetas -= alpha / m * (np.dot(x.transpose(), h - y) + reg_param * reg_vector)
+    thetas -= alpha / batch_size * (np.dot(x.transpose(), h - y) + reg_param * reg_vector)
     return thetas
 
 
@@ -34,6 +35,25 @@ def gradient_descent(x, y, thetas, alpha=0.1, epsilon=0.0001, reg_param=1):
         thetas = update_thetas(x, y, thetas, alpha, reg_param)
         cost_list.append(float(cost_function(x, y, thetas)))
     return thetas, cost_list
+
+
+def stochastic_descent(x, y, thetas, alpha=0.1, epsilon=0.0001, reg_param=1, batch_size=1):
+    m = len(y)
+    cost_list = [cost_function(x, y, thetas)]
+
+    # while len(cost_list) == 1 or cost_list[-1] / cost_list[-2] <= 1 - epsilon:
+    for iteration in range(20):
+        for i in range(m):
+            x_rows = x.iloc[i]
+            x_rows = x_rows.values.reshape(x_rows.shape[0], 1)  # marche pas pour mini batch
+            x_rows = x_rows.transpose()
+            thetas = update_thetas(x_rows, y[i], thetas, 0.001, reg_param, batch_size=batch_size)
+        cost_list.append(float(cost_function(x, y, thetas)))
+    return thetas, cost_list
+
+
+    # theta_dict[house], cost_list_dict[house] = copy.deepcopy(
+    #     binary_classifier.gradient_descent(features, house_output, thetas_init, alpha, epsilon, reg_param))
 
 
 if __name__ == "__main__":
