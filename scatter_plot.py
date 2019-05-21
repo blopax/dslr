@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_pdf import PdfPages
-
+import argparse
 
 import utils
 
@@ -41,12 +41,18 @@ def scatter_plot_detailled(df):
     pp.close()
 
 
-def scatter_plot(df):
-    plt.scatter(df["Astronomy"], df["Defense Against the Dark Arts"])
-    plt.show()
+def get_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("dataset_file", help="Please add a dataset file (.csv) as an argument.", type=str)
+    parser.add_argument("-d", "--detailled", action="store_true",
+                        help="Show all scatter plot on different page with more details.\n")
+    return parser.parse_args()
 
 
 if __name__ == "__main__":
-    train_df = pd.read_csv(utils.TRAIN_FILE)
-    scatter_plot_detailled(train_df)
-    # scatter_plot(train_df)
+    args = get_args()
+    data = pd.read_csv(args.dataset_file)
+    if args.detailled:
+        scatter_plot_detailled(data)
+    else:
+        scatter_plot_clustered(data)
