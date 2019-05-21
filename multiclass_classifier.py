@@ -16,7 +16,7 @@ def get_thetas_train(df, selected_features=utils.SELECTED_FEATURES, alpha=0.1, e
         house_output[house_output == index] = -1
         house_output[house_output >= 0] = 0
         house_output[house_output == -1] = 1
-        if mode == "gradient":
+        if mode == "batch":
             theta_dict[house], cost_list_dict[house] = copy.deepcopy(
                 binary_classifier.gradient_descent(features, house_output, thetas_init, alpha, epsilon, reg_param))
         elif mode in ["stochastic", "mini_batch"]:
