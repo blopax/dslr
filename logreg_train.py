@@ -35,8 +35,8 @@ def get_args():
                         help="Choose the train_size split.\n")
     parser.add_argument("-v", "--visualisation", action="store_true",
                         help="Display cost function.\n")
-    parser.add_argument("-a", "--accuracy", action="store_true",
-                        help="Display train accuracy")
+    parser.add_argument("-a", "--accuracy", type=str, default=None, choices=['simple', 'full'],
+                        help="Display train accuracy if simple and more information if full")
     parser.add_argument("-m", "--mode", type=str, default="batch", choices=["batch", "mini_batch", "stochastic"],
                         help="Choose gradient descent mode.")
     parser.add_argument("-b", "--batch_size", type=int, default=None,
@@ -74,7 +74,7 @@ if __name__ == '__main__':
             print("Iterations must be strictly positive.")
             exit(0)
 
-        final_theta_dict, cost_list_dict, train_accuracy = multiclass_classifier.train(
+        final_theta_dict, cost_list_dict, accuracy_dict = multiclass_classifier.train(
             train_data,
             alpha=args.learning_rate,
             epsilon=args.epsilon,
@@ -86,8 +86,14 @@ if __name__ == '__main__':
 
         theta_dict_to_csv(final_theta_dict)
 
-        if args.accuracy:
-            print("Train accuracy is: ", train_accuracy)
+        if args.accuracy == 'full':
+            print("Train total accuracy is: {}\n".format(accuracy_dict['total']))
+            print("Accuracy per house is:\n{}\n".format(
+                pd.DataFrame(accuracy_dict['house accuracy'], index=['accuracy'])))
+            print("Wrong predictions are:\n{}".format(accuracy_dict['errors']))
+        if args.accuracy == 'full':
+            print("Train total accuracy is: {}\n".format(accuracy_dict['total']))
+
         if args.visualisation:
             show_cost(cost_list_dict)
     except FileNotFoundError as err:
