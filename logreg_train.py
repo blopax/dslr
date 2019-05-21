@@ -25,7 +25,7 @@ def show_cost(cost):
 def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("dataset_train_file", help="Please add a csv file as a parameter (.csv file)", type=str)
-    parser.add_argument("-l", "--learning_rate", type=float, default=0.1,
+    parser.add_argument("-l", "--learning_rate", type=float, default=0.005,
                         help="Choose the learning rate.\n")
     parser.add_argument("-e", "--epsilon", type=float, default=0.0001,
                         help="Choose the epsilon when iterations should stop.\n")
@@ -37,8 +37,12 @@ def get_args():
                         help="Display cost function.\n")
     parser.add_argument("-a", "--accuracy", action="store_true",
                         help="Display train accuracy")
-    parser.add_argument("-m", "--mode", type=str, default="gradient", choices=["gradient", "stochastic"],
+    parser.add_argument("-m", "--mode", type=str, default="batch", choices=["batch", "mini_batch", "stochastic"],
                         help="Choose gradient descent mode.")
+    parser.add_argument("-b", "--batch_size", type=int, default=None,
+                        help="For mini_batch. Pick the mini_batch size.\n")
+    parser.add_argument("-i", "--iterations", type=int, default=None,
+                        help="For mini_batch and stochastic. Pick the number of iterations.\n")
 
     return parser.parse_args()
 
@@ -48,25 +52,37 @@ if __name__ == '__main__':
     if not 0 < args.split < 1:
         print("Train split must belong to ]0, 1[")
         exit(0)
-    # alpha = args.learning_rate
-    # epsilon = args.stop_param
-    # reg_param = args.reg_param
-    # train_size = args.split
-    # if args.mode == "stochastic":
-
+    # noinspection PyUnresolvedReferences
     try:
         train_data = pd.read_csv(args.dataset_train_file)
-        if not args.reg_param and args.mode == "gradient":
+        if not args.reg_param and args.mode == "batch":
             args.reg_param = 100
-        if not args.reg_param and args.mode == "stochastic":
+        elif not args.reg_param:
             args.reg_param = 0
+        if args.mode == "stochastic":
+            args.batch_size = 1
+        if not args.iterations and args.mode == "stochastic":
+            args.iterations = 5
+        if not args.batch_size and args.mode == "mini_batch":
+            args.batch_size = 50
+        if not args.iterations and args.mode == "mini_batch":
+            args.iterations = 75
+        if args.mode == "mini_batch" and not 0 < args.batch_size <= len(train_data) * args.split:
+            print("Mini batch must be strictly positive and less than len(train_data) * split.")
+            exit(0)
+        if args.iterations is not None and args.iterations < 1:
+            print("Iterations must be strictly positive.")
+            exit(0)
+
         final_theta_dict, cost_list_dict, train_accuracy = multiclass_classifier.train(
             train_data,
             alpha=args.learning_rate,
             epsilon=args.epsilon,
             reg_param=args.reg_param,
             train_size=args.split,
-            mode=args.mode)
+            mode=args.mode,
+            batch_size=args.batch_size,
+            iterations=args.iterations)
 
         theta_dict_to_csv(final_theta_dict)
 
