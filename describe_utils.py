@@ -75,8 +75,6 @@ def describe_serie(serie, show_full):
 
 if __name__ == "__main__":
     df = pd.read_csv(utils.TRAIN_FILE)
-    S = df["Arithmancy"].dropna()
-    # S = pd.Series([])
-    # S = pd.Series([1, 2, 3, 4])
-    print(describe_serie(S, False))
-    print(S.describe())
+    # s = df["Arithmancy"].dropna()
+    s = pd.Series([x for x in range(101)])
+    print(s.describe())
