@@ -27,13 +27,16 @@ def show_all(df):
 def show_best(df):
     np.warnings.filterwarnings('ignore')
     for i, house in enumerate(utils.HOUSES):
-        plt.hist(df[df['Hogwarts House'] == house]["Care of Magical Creatures"], color=utils.COLOR[i], alpha=0.5)
+        plt.hist(df[df['Hogwarts House'] == house]["Care of Magical Creatures"], color=utils.COLOR[i], alpha=0.5,
+                 label=house)
+        plt.legend()
 
     plt.xlabel('Grade')
     plt.ylabel('Number of students')
     plt.title("Repartition of grades between Poudlard's house")
     plt.tight_layout(pad=1, w_pad=1, h_pad=1)
     plt.savefig("best_histogram.pdf", bbox_inches='tight')
+
 
 def get_args():
     parser = argparse.ArgumentParser()
@@ -45,8 +48,16 @@ def get_args():
 
 if __name__ == "__main__":
     args = get_args()
-    data = pd.read_csv(args.dataset_file)
-    if args.all:
-        show_all(data)
-    else:
-        show_best(data)
+    # noinspection PyUnresolvedReferences
+    try:
+        data = pd.read_csv(args.dataset_file)
+        if args.all:
+            show_all(data)
+            print("A pdf has been created in the folder.")
+        else:
+            show_best(data)
+            print("A pdf has been created in the folder.")
+    except FileNotFoundError as err:
+        print("Error: {}".format(err))
+    except pd.errors.ParserError as err:
+        print("Error: dataset_train not csv or well formatted.\n{}".format(err))
