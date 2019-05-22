@@ -32,9 +32,9 @@ def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("dataset_file", help="Please add a dataset file (.csv) as an argument.", type=str)
     parser.add_argument("-f", "--full", action="store_true",
-                        help="Add more info to description.\n")
+                        help="add more info to description.\n")
     parser.add_argument("-c", "--compare", action="store_true",
-                        help="Add more info to description.\n")
+                        help="show the pandas describe function to compare results.\n")
     return parser.parse_args()
 
 
