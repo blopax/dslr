@@ -42,7 +42,7 @@ def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("dataset_file", help="Please add a dataset file (.csv) as an argument.", type=str)
     parser.add_argument("-a", "--all", action="store_true",
-                        help="Show all histograms.\n")
+                        help="show all histograms.\n")
     return parser.parse_args()
 
 

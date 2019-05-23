@@ -46,7 +46,7 @@ def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("dataset_file", help="Please add a dataset file (.csv) as an argument.", type=str)
     parser.add_argument("-d", "--detailed", action="store_true",
-                        help="Show all scatter plot on different page with more details.\n")
+                        help="show all scatter plot on different page with more details.\n")
     return parser.parse_args()
 
 

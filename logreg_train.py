@@ -91,7 +91,7 @@ if __name__ == '__main__':
             print("Accuracy per house is:\n{}\n".format(
                 pd.DataFrame(accuracy_dict['house accuracy'], index=['accuracy'])))
             print("Wrong predictions are:\n{}".format(accuracy_dict['errors']))
-        if args.accuracy == 'full':
+        if args.accuracy == 'simple':
             print("Train total accuracy is: {}\n".format(accuracy_dict['total']))
 
         if args.visualisation:
