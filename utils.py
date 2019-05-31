@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-def get_accuracy(prediction, truth, mode='simple'):
+def get_accuracy(prediction, truth):
     errors_loc = truth["Hogwarts House"] != prediction
     errors = pd.DataFrame()
     errors["truth"] = truth[errors_loc]["Hogwarts House"]
@@ -17,16 +17,6 @@ def get_accuracy(prediction, truth, mode='simple'):
     accuracy_dict['errors'] = errors
     accuracy_dict['house accuracy'] = [house_acc]
     return accuracy_dict
-
-    # if mode == 'all':
-    #     accuracy_dict = dict()
-    #     accuracy_dict['total'] = total_accuracy
-    #     accuracy_dict['errors'] = errors
-    #     accuracy_dict['house_accuracy'] = house_acc
-    #     print("Zoom on wrong predictions:\n", errors)
-    #     print("Accuracy per house: ", house_acc)
-    # print("Total accuracy is: ", total_accuracy)
-    return total_accuracy
 
 
 SUBJECT = ["Arithmancy", "Astronomy", "Herbology", "Defense Against the Dark Arts", "Divination", "Muggle Studies",

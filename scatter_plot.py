@@ -19,7 +19,6 @@ def scatter_plot_clustered(df):
             ax.set_yticklabels([])
             ax.set_xticklabels([])
             ax.tick_params(labelsize=2)
-    # fig.savefig("scatter_plot.pdf", bbox_inches='tight')
     plt.tight_layout(pad=1, w_pad=1, h_pad=1)
     fig.savefig("scatter_plot.png", dpi=100)
 

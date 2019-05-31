@@ -21,7 +21,7 @@ A set of options have been added to the project required to:
 I used pandas and numpy but no functions that would do the ML algorithms or the describe function for me.
 The aim was to not use a ready-made library (like sklearn) but to understand how the algos work.
 
-## Objective of the describe function
+## Objective
 Given a training data set of Poudlards students, build a classifier that predicts to which house students of an unknown dataset belong with an accuracy of 98%.
 To do so, analyze first the data using a describe function that must be coded from scratch (similar to the pandas method) 
 , plot some relevant graphs given some constraints (histogram, pair plot and scatter plot) and then build a train and predic script.

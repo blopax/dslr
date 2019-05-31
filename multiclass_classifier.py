@@ -36,7 +36,7 @@ def train(df, selected_features=utils.SELECTED_FEATURES, alpha=0.1, epsilon=0.00
                                                    batch_size=batch_size, iterations=iterations)
     prediction = predict(test_df, thetas_dict)
     truth = test_df[["Index", "Hogwarts House"]]
-    accuracy = utils.get_accuracy(prediction, truth, mode="simple")
+    accuracy = utils.get_accuracy(prediction, truth)
     return thetas_dict, cost_list_dict, accuracy
 
 
@@ -57,19 +57,11 @@ if __name__ == "__main__":
     train_data = pd.read_csv(utils.TRAIN_FILE)
     test_data = pd.read_csv(utils.TEST_FILE, delimiter=',')
 
-    # with open("comb_train", mode="a+") as fd:
-    #     for select_feat in utils.COMBINATORY:
-    #         print(select_feat)
-    #         final_theta_dict, _, train_accuracy = train(train_data, selected_features=select_feat, alpha=1,
-    #                                                     epsilon=0.01, reg_param=100, train_size=0.75)
-    #         print("Train accuracy is:{} for select feature {}".format(train_accuracy, select_feat), file=fd)
-
     final_theta_dict, _, train_accuracy = train(train_data, alpha=1, epsilon=0.01, reg_param=100, train_size=0.7)
-
     print("Train accuracy is: ", train_accuracy)
 
     test_truth = pd.read_csv("files/dataset_truth.csv")
     test_prediction = predict(test_data, final_theta_dict)
 
-    test_accuracy = utils.get_accuracy(test_prediction, test_truth, mode='simple')
+    test_accuracy = utils.get_accuracy(test_prediction, test_truth)
     print("Test accuracy is: ", test_accuracy)
