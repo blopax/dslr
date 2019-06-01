@@ -33,3 +33,5 @@ if __name__ == '__main__':
         print("Error: {}".format(err))
     except pd.errors.ParserError as err:
         print("Error: dataset_train not csv or well formatted.\n{}".format(err))
+    except UnicodeDecodeError as err:
+        print("Error: dataset_train not csv or well formatted.\n{}".format(err))

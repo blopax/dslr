@@ -78,12 +78,12 @@ First set up the virtual environment: ```source set_up/set_env.sh```
 
 To run the different graphs do:
 <pre>
-python histogram.py [-h] [-a] dataset_file
-python pair_plot.py [-h] dataset_file
-python scatter_plot.py [-h] [-d] dataset_file
+python histogram.py [-h] [-f DATASET_FILE] [-a]
+python pair_plot.py [-h] [-f DATASET_FILE]
+python scatter_plot.py [-h] [-f DATASET_FILE] [-d]
 </pre>
 
-The only required input is the input filename (`dataset_file`). It must be a csv. The rest is optional.
+For all theses scripts the file must be a csv.
 
 ### Options
 <pre>
@@ -189,7 +189,7 @@ To run the different graphs do:
 python  logreg_predict.py [-h] dataset_test_file weights
 </pre>
 
-The only required input is the input filename (`dataset_file`). It must be a csv.
+The required inputs are the input filename (`dataset_file`) and the input weights files. They must be csv.
 
 
 ### Results displayed

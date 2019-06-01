@@ -84,19 +84,22 @@ if __name__ == '__main__':
             batch_size=args.batch_size,
             iterations=args.iterations)
 
-        theta_dict_to_csv(final_theta_dict)
+        if final_theta_dict is not None:
+            theta_dict_to_csv(final_theta_dict)
 
-        if args.accuracy == 'full':
-            print("Train total accuracy is: {}\n".format(accuracy_dict['total']))
-            print("Accuracy per house is:\n{}\n".format(
-                pd.DataFrame(accuracy_dict['house accuracy'], index=['accuracy'])))
-            print("Wrong predictions are:\n{}".format(accuracy_dict['errors']))
-        if args.accuracy == 'simple':
-            print("Train total accuracy is: {}\n".format(accuracy_dict['total']))
+            if args.accuracy == 'full':
+                print("Train total accuracy is: {}\n".format(accuracy_dict['total']))
+                print("Accuracy per house is:\n{}\n".format(
+                    pd.DataFrame(accuracy_dict['house accuracy'], index=['accuracy'])))
+                print("Wrong predictions are:\n{}".format(accuracy_dict['errors']))
+            if args.accuracy == 'simple':
+                print("Train total accuracy is: {}\n".format(accuracy_dict['total']))
 
-        if args.visualisation:
-            show_cost(cost_list_dict)
+            if args.visualisation:
+                show_cost(cost_list_dict)
     except FileNotFoundError as err:
         print("Error: {}".format(err))
     except pd.errors.ParserError as err:
+        print("Error: dataset_train not csv or well formatted.\n{}".format(err))
+    except UnicodeDecodeError as err:
         print("Error: dataset_train not csv or well formatted.\n{}".format(err))

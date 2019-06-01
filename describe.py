@@ -40,10 +40,16 @@ def get_args():
 
 if __name__ == "__main__":
     args = get_args()
-    data = pd.read_csv(args.dataset_file)
-    if args.full:
-        describe(data, show_full=True)
-    else:
-        describe(data)
-    if args.compare:
-        print(data[utils.SUBJECT].describe())
+    # noinspection PyUnresolvedReferences
+    try:
+        data = pd.read_csv(args.dataset_file)
+        if args.full:
+            describe(data, show_full=True)
+        else:
+            describe(data)
+        if args.compare:
+            print(data[utils.SUBJECT].describe())
+    except FileNotFoundError as err:
+        print("Error: {}".format(err))
+    except pd.errors.ParserError as err:
+        print("Error: dataset_train not csv or well formatted.\n{}".format(err))

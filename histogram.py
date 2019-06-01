@@ -40,7 +40,8 @@ def show_best(df):
 
 def get_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("dataset_file", help="Please add a dataset file (.csv) as an argument.", type=str)
+    parser.add_argument("-f", "--dataset_file", help="Please add a dataset file (.csv) as an argument.", type=str,
+                        default='files/dataset_train.csv')
     parser.add_argument("-a", "--all", action="store_true",
                         help="show all histograms.\n")
     return parser.parse_args()
@@ -60,4 +61,6 @@ if __name__ == "__main__":
     except FileNotFoundError as err:
         print("Error: {}".format(err))
     except pd.errors.ParserError as err:
+        print("Error: dataset_train not csv or well formatted.\n{}".format(err))
+    except UnicodeDecodeError as err:
         print("Error: dataset_train not csv or well formatted.\n{}".format(err))

@@ -43,7 +43,8 @@ def scatter_plot_detailed(df):
 
 def get_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("dataset_file", help="Please add a dataset file (.csv) as an argument.", type=str)
+    parser.add_argument("-f", "--dataset_file", help="Please add a dataset file (.csv) as an argument.", type=str,
+                        default='files/dataset_train.csv')
     parser.add_argument("-d", "--detailed", action="store_true",
                         help="show all scatter plot on different page with more details.\n")
     return parser.parse_args()
@@ -56,11 +57,13 @@ if __name__ == "__main__":
         data = pd.read_csv(args.dataset_file)
         if args.detailed:
             scatter_plot_detailed(data)
-            print("A png has been created in the folder.")
+            print("A pdf has been created in the folder.")
         else:
             scatter_plot_clustered(data)
-            print("A pdf has been created in the folder.")
+            print("A png has been created in the folder.")
     except FileNotFoundError as err:
         print("Error: {}".format(err))
     except pd.errors.ParserError as err:
+        print("Error: dataset_train not csv or well formatted.\n{}".format(err))
+    except UnicodeDecodeError as err:
         print("Error: dataset_train not csv or well formatted.\n{}".format(err))

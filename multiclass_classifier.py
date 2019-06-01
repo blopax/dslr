@@ -9,6 +9,8 @@ import clean_data_set
 def get_thetas_train(df, selected_features=utils.SELECTED_FEATURES, alpha=0.1, epsilon=0.0001, reg_param=100,
                      mode="gradient", batch_size=1, iterations=10):
     features, output = clean_data_set.clean_df(df, selected_features=selected_features, train=True)
+    if features.empty:
+        return None, None
     thetas_init = pd.Series([0.0] * features.shape[1]).values.reshape(features.shape[1], 1)
     theta_dict, cost_list_dict = dict(), dict()
     for index, house in enumerate(utils.HOUSES):
@@ -34,6 +36,9 @@ def train(df, selected_features=utils.SELECTED_FEATURES, alpha=0.1, epsilon=0.00
     thetas_dict, cost_list_dict = get_thetas_train(train_df, selected_features=selected_features, alpha=alpha,
                                                    epsilon=epsilon, reg_param=reg_param, mode=mode,
                                                    batch_size=batch_size, iterations=iterations)
+
+    if thetas_dict is None:
+        return None, None, None
     prediction = predict(test_df, thetas_dict)
     truth = test_df[["Index", "Hogwarts House"]]
     accuracy = utils.get_accuracy(prediction, truth)
