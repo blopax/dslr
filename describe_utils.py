@@ -30,10 +30,8 @@ def get_std(serie, count, mean):
     if count <= 1:
         return None
     deviation_sum = 0.0
-    i = 0
     for item in serie:
         deviation_sum += (float(item) - float(mean)) ** 2
-        i += 1
     std = (float(deviation_sum) / (count - 1)) ** 0.5
     return std
 

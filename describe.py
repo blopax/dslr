@@ -5,10 +5,6 @@ import describe_utils
 import utils
 
 
-def get_clean_series(serie_name):
-    return pd.Series(data[serie_name]).dropna()
-
-
 def get_infos(df, show_full=False):
     infos_dict = {}
     for item in utils.SUBJECT:
@@ -52,4 +48,6 @@ if __name__ == "__main__":
     except FileNotFoundError as err:
         print("Error: {}".format(err))
     except pd.errors.ParserError as err:
+        print("Error: dataset_train not csv or well formatted.\n{}".format(err))
+    except UnicodeDecodeError as err:
         print("Error: dataset_train not csv or well formatted.\n{}".format(err))
